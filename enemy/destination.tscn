@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dnxi0bgehm4c"]
+
+[ext_resource type="Script" uid="uid://d4lv08bt2uv7f" path="res://enemy/destination.gd" id="1_yvkr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vi4ty"]
+
+[node name="destination" type="Node3D" unique_id=1404384640]
+script = ExtResource("1_yvkr1")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1234796588]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1818975046]
+shape = SubResource("BoxShape3D_vi4ty")
+
+[connection signal="body_entered" from="Area3D" to="." method="enter_trigger"]

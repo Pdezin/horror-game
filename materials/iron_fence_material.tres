@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://r04l3271v72c"]
+
+[ext_resource type="Texture2D" uid="uid://ck4u1nb2l4oq4" path="res://textures/metal_fence_opacity.jpg" id="1_rw8g5"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_rw8g5")
+uv1_scale = Vector3(3, 1, 1)

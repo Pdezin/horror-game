@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bp1v5dbb4i12u"]
+
+[ext_resource type="Texture2D" uid="uid://eyobtpdykygv" path="res://textures/wall.jpg" id="1_kf2sy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kf2sy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5hvib"]
+noise = SubResource("FastNoiseLite_kf2sy")
+seamless = true
+as_normal_map = true
+bump_strength = 6.0
+
+[resource]
+albedo_texture = ExtResource("1_kf2sy")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_5hvib")
+uv1_scale = Vector3(10, 10, 10)

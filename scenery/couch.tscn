@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cea0q7ufn2f8q"]
+
+[ext_resource type="PackedScene" uid="uid://b60kulrhsacib" path="res://glb_models/quaternius_cc0-large-couch-874.glb" id="1_fixh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fixh1"]
+size = Vector3(0.84552, 0.50927734, 1.637207)
+
+[node name="couch" unique_id=87810740 instance=ExtResource("1_fixh1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Couch_Large1" parent_id_path=PackedInt32Array(877631076) index="0" unique_id=2109757735]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Couch_Large1/StaticBody3D" index="0" unique_id=816098111]
+transform = Transform3D(6.4777927, 0, 0, 0, 4.0692415, 0, 0, 0, 1.2285922, -0.0017791763, 1.0580425, 0.3224788)
+shape = SubResource("BoxShape3D_fixh1")

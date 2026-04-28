@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://tac1vdifob6o"]
+
+[ext_resource type="PackedScene" uid="uid://dqqxxw1achjxh" path="res://glb_models/quaternius_cc0-kitchen-sink-1114.glb" id="1_4xux3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xux3"]
+size = Vector3(1.0160217, 1.6616249, 1.1196289)
+
+[node name="kitchen-sink" unique_id=540131088 instance=ExtResource("1_4xux3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Sink" parent_id_path=PackedInt32Array(415994768) index="0" unique_id=1413722671]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_Sink/StaticBody3D" index="0" unique_id=1712847330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036468506, 0.8411236, 0.059814453)
+shape = SubResource("BoxShape3D_4xux3")

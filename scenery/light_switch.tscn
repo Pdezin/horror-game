@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bd05mpvcxyxky"]
+
+[ext_resource type="Script" uid="uid://ssaawd5f21w8" path="res://general_script/light_switch.gd" id="1_3p06s"]
+[ext_resource type="Material" uid="uid://cno3taaqojgij" path="res://materials/light_material.tres" id="2_ilde7"]
+[ext_resource type="AudioStream" uid="uid://drqyapeevilod" path="res://sounds/light-switch.mp3" id="3_b7x4s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilde7"]
+albedo_color = Color(0.9150863, 0.91284716, 0.86843234, 1)
+roughness = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_kmfbv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmfbv"]
+size = Vector3(0.42131805, 0.648674, 0.13659668)
+
+[node name="light_switch" type="Node3D" unique_id=1477890185]
+script = ExtResource("1_3p06s")
+on_mat = ExtResource("2_ilde7")
+off_mat = SubResource("StandardMaterial3D_ilde7")
+
+[node name="frame" type="MeshInstance3D" parent="." unique_id=395819829]
+transform = Transform3D(0.41178524, 0, 0, 0, 0.643978, 0, 0, 0, 0.107325345, 0, 0, 0)
+mesh = SubResource("BoxMesh_kmfbv")
+
+[node name="frame2" type="MeshInstance3D" parent="." unique_id=791679559]
+transform = Transform3D(0.19679344, 0, 0, 0, 0.418837, 0, 0, 0, 0.107325345, 0, 0, 0.014030337)
+mesh = SubResource("BoxMesh_kmfbv")
+
+[node name="on" type="MeshInstance3D" parent="." unique_id=859801635]
+transform = Transform3D(0.14365996, 0, 0, 0, 0.27438974, 0.025134802, 0, -0.06896264, 0.100006774, 0, -0.0009396374, 0.047726512)
+mesh = SubResource("BoxMesh_kmfbv")
+
+[node name="off" type="MeshInstance3D" parent="." unique_id=2065499594]
+transform = Transform3D(0.14365996, 0, 0, 0, 0.27439937, -0.025120847, 0, 0.06892436, 0.10001028, 0, -0.0009396374, 0.047726512)
+mesh = SubResource("BoxMesh_kmfbv")
+
+[node name="light_switch" type="StaticBody3D" parent="." unique_id=657294873]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="light_switch" unique_id=504765324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008125305, -0.00020980835, 0.0051879883)
+shape = SubResource("BoxShape3D_kmfbv")
+
+[node name="switch" type="AudioStreamPlayer3D" parent="." unique_id=349095478]
+stream = ExtResource("3_b7x4s")
+max_distance = 5.0
+bus = &"SFX"

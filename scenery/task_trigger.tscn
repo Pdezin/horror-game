@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://fgtskvwjtlcl"]
+
+[ext_resource type="Script" uid="uid://6ab0n2r2mtnx" path="res://general_script/task_trigger.gd" id="1_hbfq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7er6k"]
+
+[node name="task_trigger" type="Area3D" unique_id=1280852037]
+script = ExtResource("1_hbfq1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1599709572]
+shape = SubResource("BoxShape3D_7er6k")
+
+[connection signal="body_entered" from="." to="." method="enter_trigger"]

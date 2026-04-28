@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://oortvijiahii"]
+
+[ext_resource type="Script" uid="uid://c7mke4lhjoykq" path="res://enemy/enemy.gd" id="1_2mvqj"]
+[ext_resource type="PackedScene" uid="uid://bunboiuhfbrd1" path="res://enemy/monster_enemy.tscn" id="2_ofsxj"]
+[ext_resource type="AudioStream" uid="uid://cpnfj3xx1vqjl" path="res://sounds/enemy_footsteps.mp3" id="3_p200p"]
+[ext_resource type="AudioStream" uid="uid://40ufdrja4gjl" path="res://sounds/growl_1.mp3" id="3_pmsee"]
+[ext_resource type="AudioStream" uid="uid://daoayqe5byblo" path="res://sounds/growl_2.mp3" id="3_y5vj3"]
+[ext_resource type="AudioStream" uid="uid://cgs2eh31jgo6t" path="res://sounds/growl_3.mp3" id="4_5ffra"]
+[ext_resource type="AudioStream" uid="uid://cw8gqmke2vupn" path="res://sounds/enemy_footsteps_grass.mp3" id="4_p200p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofsxj"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=896111546]
+script = ExtResource("1_2mvqj")
+growl_audios = Array[AudioStream]([ExtResource("3_pmsee"), ExtResource("3_y5vj3"), ExtResource("4_5ffra")])
+
+[node name="monster_enemy" parent="." unique_id=1314090149 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(-0.7, 0, -1.0569706e-07, 0, 0.7, 0, 1.0569706e-07, 0, -0.7, -0.0026450753, 0.065026134, 0.087382555)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=695139105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99860644, 0)
+shape = SubResource("CapsuleShape3D_ofsxj")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2015913211]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="growl" type="AudioStreamPlayer3D" parent="." unique_id=1038845082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9640117, 0)
+stream = ExtResource("3_pmsee")
+max_distance = 30.0
+bus = &"SFX"
+
+[node name="chasecasts" type="Node3D" parent="." unique_id=1610161965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99860644, 0)
+
+[node name="chasecast" type="RayCast3D" parent="chasecasts" unique_id=272463562]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
+target_position = Vector3(0, -10, 0)
+
+[node name="chasecast2" type="RayCast3D" parent="chasecasts" unique_id=1306429497]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
+target_position = Vector3(5, -10, 0)
+
+[node name="chasecast3" type="RayCast3D" parent="chasecasts" unique_id=259994872]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
+target_position = Vector3(-5, -10, 0)
+
+[node name="chasecast4" type="RayCast3D" parent="chasecasts" unique_id=813723182]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
+target_position = Vector3(-2.5, -10, 0)
+
+[node name="chasecast5" type="RayCast3D" parent="chasecasts" unique_id=538022737]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
+target_position = Vector3(2.5, -10, 0)
+
+[node name="killcast" type="Node3D" parent="." unique_id=475672132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42057043, -0.5144063)
+
+[node name="killcast" type="RayCast3D" parent="killcast" unique_id=1098162199]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0.0050887465, 0)
+enabled = false
+target_position = Vector3(0, 0.7, 0)
+collision_mask = 2
+
+[node name="feet" type="Node3D" parent="." unique_id=1667083233]
+
+[node name="footsteps" type="AudioStreamPlayer3D" parent="feet" unique_id=1093997093]
+stream = ExtResource("3_p200p")
+volume_db = -10.0
+pitch_scale = 0.9
+max_distance = 30.0
+bus = &"SFX"
+
+[node name="grass_footsteps" type="AudioStreamPlayer3D" parent="feet" unique_id=1908479704]
+stream = ExtResource("4_p200p")
+volume_db = -10.0
+pitch_scale = 1.9
+max_distance = 30.0
+bus = &"SFX"
+
+[node name="RayCast3D" type="RayCast3D" parent="feet" unique_id=1223184413]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+target_position = Vector3(0, 1, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=2037366921]
+wait_time = 5.0
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]

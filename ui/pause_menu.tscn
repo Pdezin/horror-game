@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://xm26eacg42ei"]
+
+[sub_resource type="Gradient" id="Gradient_euhrg"]
+offsets = PackedFloat32Array(0.34084508, 0.48732394)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.3529412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_50142"]
+gradient = SubResource("Gradient_euhrg")
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1719580880]
+layer = 2
+
+[node name="shadow" type="TextureRect" parent="." unique_id=44580165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_50142")
+
+[node name="menu" type="Control" parent="." unique_id=1547334508]
+layout_mode = 3
+anchor_left = 0.18100001
+anchor_top = 0.5
+anchor_right = 0.18100001
+anchor_bottom = 0.5
+offset_left = -208.51201
+offset_top = -324.0
+offset_right = 208.48799
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="pause_label" type="RichTextLabel" parent="menu" unique_id=188322363]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 416.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]PAUSED"
+metadata/_edit_use_anchors_ = true
+
+[node name="resume_button" type="Button" parent="menu" unique_id=1789339814]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 202.0
+offset_right = 385.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+metadata/_edit_use_anchors_ = true
+
+[node name="settings_button" type="Button" parent="menu" unique_id=554203185]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 258.0
+offset_right = 385.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="controls_button" type="Button" parent="menu" unique_id=264150046]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 314.0
+offset_right = 385.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+metadata/_edit_use_anchors_ = true
+
+[node name="mainmenu_button" type="Button" parent="menu" unique_id=1713559488]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 370.0
+offset_right = 385.0
+offset_bottom = 412.0
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="quitgame_button" type="Button" parent="menu" unique_id=1727323004]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 426.0
+offset_right = 385.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 24
+text = "Quit Game"
+metadata/_edit_use_anchors_ = true

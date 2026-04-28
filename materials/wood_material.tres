@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://yly23vvinva7"]
+
+[ext_resource type="Texture2D" uid="uid://drxjherf7dr2m" path="res://textures/wood.jpg" id="1_ktg8k"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ktg8k"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fcyvw"]
+noise = SubResource("FastNoiseLite_ktg8k")
+seamless = true
+as_normal_map = true
+bump_strength = 3.0
+
+[resource]
+albedo_color = Color(0.6120363, 0.61203635, 0.6120363, 1)
+albedo_texture = ExtResource("1_ktg8k")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = SubResource("NoiseTexture2D_fcyvw")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ddxagrsvm8m2o"]
+
+[ext_resource type="PackedScene" uid="uid://dlqnlmf62uwe0" path="res://glb_models/quaternius_cc0-kitchen-cabinet-1105.glb" id="1_4tkyj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tkyj"]
+size = Vector3(1.0101318, 1.6228027, 1.1281738)
+
+[node name="kitchen-cabinet" unique_id=120715767 instance=ExtResource("1_4tkyj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_1Drawers" parent_id_path=PackedInt32Array(2100820769) index="0" unique_id=1341527320]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_1Drawers/StaticBody3D" index="0" unique_id=1955261774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00018310547, 0.81529486, 0.055541992)
+shape = SubResource("BoxShape3D_4tkyj")

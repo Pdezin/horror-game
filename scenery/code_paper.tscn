@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c641hc2svjobn"]
+
+[ext_resource type="Script" uid="uid://doqxnr4hqide0" path="res://general_script/code_paper.gd" id="1_vvaag"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7a11i"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vvaag"]
+noise = SubResource("FastNoiseLite_7a11i")
+seamless = true
+as_normal_map = true
+bump_strength = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_web1u"]
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_vvaag")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g01vd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dm00l"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cnefa"]
+noise = SubResource("FastNoiseLite_dm00l")
+seamless = true
+as_normal_map = true
+bump_strength = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv7jy"]
+albedo_color = Color(0.08072919, 0.08072919, 0.08072919, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_cnefa")
+
+[sub_resource type="TextMesh" id="TextMesh_bqqqg"]
+material = SubResource("StandardMaterial3D_bv7jy")
+text = "1111"
+depth = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvaag"]
+size = Vector3(1, 1.0466003, 1)
+
+[node name="code_paper" type="RigidBody3D" unique_id=865794835]
+collision_layer = 3
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_vvaag")
+
+[node name="paper" type="MeshInstance3D" parent="." unique_id=419839659]
+transform = Transform3D(0.4, 0, 0, 0, -9.091969e-09, 0.41, 0, -0.208, -1.792167e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_web1u")
+mesh = SubResource("QuadMesh_g01vd")
+
+[node name="code_text" type="MeshInstance3D" parent="." unique_id=418757824]
+transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, 0.8, 0, -0.8, -3.4969112e-08, 0, 0.007988729, 0)
+mesh = SubResource("TextMesh_bqqqg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2016699524]
+transform = Transform3D(0.4, 0, 0, 0, 0.012, 0, 0, 0, 0.208, 0, 0.0012605786, 0)
+shape = SubResource("BoxShape3D_vvaag")
+
+[connection signal="body_entered" from="." to="." method="hit_obj"]

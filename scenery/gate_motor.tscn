@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cshvybau2gxy6"]
+
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="1_itpt5"]
+[ext_resource type="Texture2D" uid="uid://p3foq1jljjwh" path="res://textures/warning.png" id="1_knhmb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_itpt5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knhmb"]
+
+[node name="gate_motor" type="Node3D" unique_id=795528742]
+
+[node name="motor" type="MeshInstance3D" parent="." unique_id=258001988]
+transform = Transform3D(1, 0, 0, 0, 0.9598602, 0, 0, 0, 0.54868436, 0, 0.030220628, -0.1809572)
+material_override = ExtResource("1_itpt5")
+mesh = SubResource("BoxMesh_itpt5")
+
+[node name="Decal" type="Decal" parent="motor" unique_id=1989105646]
+transform = Transform3D(0.36791724, 0, 0, 0, -4.3711385e-08, -0.6901374, 0, 0.9999999, -3.0166863e-08, -0.0034048036, 0.18717714, 0.49943674)
+size = Vector3(1.4794312, 0.041721344, 0.6418724)
+texture_albedo = ExtResource("1_knhmb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="motor" unique_id=3530535]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="motor/StaticBody3D" unique_id=1773545366]
+shape = SubResource("BoxShape3D_knhmb")

@@ -1,0 +1,14 @@
+CanvasLayer
+Control
+AudioStreamPlayer2D
+Node2D
+AudioStreamPlayer3D
+Node3D
+AnimationPlayer
+CollisionShape3D
+Area3D
+StaticBody3D
+RayCast3D
+OmniLight3D
+RichTextLabel
+ColorRect

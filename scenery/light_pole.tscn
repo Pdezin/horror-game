@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c82ggod73mm6d"]
+
+[ext_resource type="Material" uid="uid://c6wyu1mvwwmr4" path="res://materials/roof_material.tres" id="1_rlm2v"]
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="2_d47uu"]
+[ext_resource type="Material" uid="uid://dk22nrqhsdcp4" path="res://materials/light2_material.tres" id="3_kdqu8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ukan1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2jb6f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oabd1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rlm2v"]
+
+[node name="light_pole" type="Node3D" unique_id=6660541]
+
+[node name="pole" type="MeshInstance3D" parent="." unique_id=1816934902]
+transform = Transform3D(0.7641798, 0, 0, 0, 3.7499328, 0, 0, 0, 0.7641798, 0, 0, 0)
+material_override = ExtResource("1_rlm2v")
+mesh = SubResource("CylinderMesh_ukan1")
+
+[node name="pole_wire" type="MeshInstance3D" parent="." unique_id=911339449]
+transform = Transform3D(0.9866556, 0, 0, 0, 0.24687046, 0, 0, 0, 0.9291102, 0, 3.0027993, 0)
+material_override = ExtResource("2_d47uu")
+mesh = SubResource("CylinderMesh_ukan1")
+
+[node name="light_pole" type="MeshInstance3D" parent="." unique_id=514658938]
+transform = Transform3D(1.8557177, 0, 0, 0, 0.21770157, 0, 0, 0, 0.3339888, 1.0142689, 1.8624115, 0)
+material_override = ExtResource("2_d47uu")
+mesh = SubResource("BoxMesh_2jb6f")
+
+[node name="light" type="Node3D" parent="." unique_id=1048964686]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="light" unique_id=1488072910]
+transform = Transform3D(-1.9553239e-08, -0.49902907, 0, 0.44732597, -2.1813253e-08, 0, 0, 0, 1, 1.7152905, 1.7457225, 0)
+material_override = ExtResource("2_d47uu")
+mesh = SubResource("CapsuleMesh_oabd1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="light/MeshInstance3D" unique_id=1361102115]
+transform = Transform3D(-1.0896858e-07, -0.12824003, 0, 2.4929104, -5.605547e-09, 0, 0, 0, 1.1206098, -0.0560143, 0, 0)
+material_override = ExtResource("2_d47uu")
+mesh = SubResource("CylinderMesh_rlm2v")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="light" unique_id=1545765334]
+transform = Transform3D(-1.9553239e-08, -0.49902907, 0, 0.44732597, -2.1813253e-08, 0, 0, 0, 1, 1.7152905, 1.7353511, 0)
+material_override = ExtResource("3_kdqu8")
+mesh = SubResource("CapsuleMesh_oabd1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="light" unique_id=594091471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.659008, 1.3467827, 0)
+light_color = Color(1, 0.89748615, 0.43506986, 1)
+shadow_enabled = true
+omni_range = 15.0

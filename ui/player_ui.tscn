@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://be2v3ilfl06oq"]
+
+[ext_resource type="Texture2D" uid="uid://leyf5fr2gor6" path="res://textures/crosshair.png" id="1_cfom6"]
+[ext_resource type="Script" uid="uid://d4dl7ut5wyn2y" path="res://general_script/player_ui.gd" id="1_ehg4m"]
+[ext_resource type="PackedScene" uid="uid://xm26eacg42ei" path="res://ui/pause_menu.tscn" id="3_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://d15gpx4vdn5tq" path="res://ui/task_ui.tscn" id="3_lp0io"]
+[ext_resource type="PackedScene" uid="uid://dha20d7dosp32" path="res://ui/safe_ui.tscn" id="5_lp0io"]
+[ext_resource type="PackedScene" uid="uid://i8dsx42db3vk" path="res://ui/cutscene_transition_ui.tscn" id="6_ykvpg"]
+
+[node name="player_ui" type="Control" unique_id=718627395]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehg4m")
+
+[node name="player_ui" type="CanvasLayer" parent="." unique_id=165448078]
+
+[node name="crosshair" type="CenterContainer" parent="player_ui" unique_id=449566854]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crosshairtex" type="TextureRect" parent="player_ui/crosshair" unique_id=740654845]
+self_modulate = Color(1, 1, 1, 0.3137255)
+layout_mode = 2
+texture = ExtResource("1_cfom6")
+
+[node name="interact_text" type="BoxContainer" parent="player_ui" unique_id=1860759595]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.80200005
+anchor_right = 0.5
+anchor_bottom = 0.80200005
+offset_left = -19.0
+offset_top = -19.696045
+offset_right = 21.0
+offset_bottom = 20.303955
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="player_ui/interact_text" unique_id=327132286]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="task_ui" parent="." unique_id=1212747872 instance=ExtResource("3_lp0io")]
+
+[node name="interactive_ui" type="Control" parent="." unique_id=1000231907]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="safe_ui" parent="interactive_ui" unique_id=492923590 instance=ExtResource("5_lp0io")]
+layer = 2
+
+[node name="pause_menu" parent="." unique_id=1719580880 instance=ExtResource("3_iwa1g")]
+layer = 3
+
+[node name="cutscene_transition_ui" parent="." unique_id=648957180 instance=ExtResource("6_ykvpg")]
+layout_mode = 1
+
+[connection signal="pressed" from="interactive_ui/safe_ui/frame/confirm_button" to="." method="confirm_safe_password"]
+[connection signal="pressed" from="interactive_ui/safe_ui/frame/back_button" to="." method="close_safe_password"]
+[connection signal="pressed" from="pause_menu/menu/resume_button" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/menu/quitgame_button" to="." method="quit_game"]
+
+[editable path="interactive_ui/safe_ui"]
+[editable path="pause_menu"]

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://h2rjcunb3cpo"]
+
+[ext_resource type="Texture2D" uid="uid://mo5lvdvqw7cp" path="res://textures/carpet.jpg" id="1_s7b68"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s7b68"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_acmnm"]
+noise = SubResource("FastNoiseLite_s7b68")
+seamless = true
+as_normal_map = true
+bump_strength = 6.0
+
+[resource]
+albedo_texture = ExtResource("1_s7b68")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_acmnm")

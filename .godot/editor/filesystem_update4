@@ -1,0 +1,14 @@
+res://enemy/enemy.tscn
+res://environment/nighttime.tres
+res://materials/house_material.tres
+res://materials/wall_material.tres
+res://materials/tiles_materia.tres
+res://materials/basement_material.tres
+res://materials/roof_material.tres
+res://materials/wood_material.tres
+res://materials/stone_material.tres
+res://materials/metal_material.tres
+res://materials/wood2_material.tres
+res://materials/carpet_material.tres
+res://materials/gold_material.tres
+res://ui/death_screen_ui.tscn

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnstpnxdlsgql"]
+
+[ext_resource type="Texture2D" uid="uid://b6pngh7oj803j" path="res://textures/backdrop_forest.jpg" id="1_nsx25"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1.5257139, 1.5257139, 1.5257139, 1)
+albedo_texture = ExtResource("1_nsx25")
+disable_receive_shadows = true

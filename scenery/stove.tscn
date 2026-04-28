@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://weohhwrgk8j3"]
+
+[ext_resource type="PackedScene" uid="uid://cyrqrxxwjfud8" path="res://glb_models/quaternius_cc0-large-kitchen-oven-1112.glb" id="1_vupvq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vupvq"]
+size = Vector3(1.1928711, 1.5979004, 1.029419)
+
+[node name="stove" unique_id=691605283 instance=ExtResource("1_vupvq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Oven_Large" parent_id_path=PackedInt32Array(1534304147) index="0" unique_id=732190636]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_Oven_Large/StaticBody3D" index="0" unique_id=1221910737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007324219, 0.78804386, 0.014709473)
+shape = SubResource("BoxShape3D_vupvq")

@@ -1,0 +1,90 @@
+[gd_scene format=4 uid="uid://c35otc6ylpk1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50glc"]
+resource_name = "Black"
+cull_mode = 2
+albedo_color = Color(0.20665619, 0.20665619, 0.20665619, 1)
+roughness = 0.6900348
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmxsh"]
+resource_name = "Mirror"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+metallic = 1.0
+roughness = 0.5527864
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wa26t"]
+_surfaces = [{
+"aabb": AABB(-0.32403952, -0.46503568, -0.039963733, 0.64807904, 0.92966664, 0.10197026),
+"format": 34896613377,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAAAFAAEAAgADAAYAAQAHAAMAAgAIAAQAAgAGAAgAAAAEAAkAAwAKAAYACAALAAQAAwAMAAoABwAMAAMABgAKAA0ACQANAAoACAAGAA4ABgANAA4ACAAOAA8ACAAPAAsADwAOAAcADwAHAAEADwABAAUADwAFAAsADgAQAAcADgANABAABwAQAAwAEQAQAA0ACQARAA0ABAALABEABAARAAkACwASABEAEQASABAAEgAMABAACwAFABIAEgATAAwABQATABIAEwAKAAwAEwAJAAoABQAAABMAAAAJABMAFAAVABYAFwAWABUAGAAXABUAFAAYABUAFwAZABYAGQAUABYAGAAaABcAGgAZABcAGgAYABQAGQAbABQAGgAUABsAGgAbABkA"),
+"name": "Black",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("TgMpBiwEAABOA///fMQAAE4DKQZ8xAAAOByOFXzEAACw/CkGLAQAAE4D//8sBAAAxuOOFXzEAAA4HJnwfMQAALD8KQZ8xAAAxuOOFSwEAADG444VVGQAALD8//8sBAAAOByOFVRkAADG45nwVGQAAMbjmfB8xAAAsPz//3zEAAA4HJnwVGQAAMbjmfAsBAAAOByZ8CwEAAA4HI4VLAQAAAAAAAD//wAA//8AAAAAAAAAAAAAAAAAAP//KwkAAAAA//8AAP//AAAAACsJAAAAAP//Kwn//wAAAAArCf//AAA=")
+}, {
+"aabb": AABB(-0.2571259, -0.39630088, -0.0061952635, 0.51425165, 0.81457376, 0.012390527),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAAAEAAEAAgAFAAMAAgABAAUAAAADAAYABAAAAAYABgADAAUAAQAEAAcABAAGAAcAAQAHAAUABgAFAAcACAAJAAoACQALAAoACAAMAAkACgALAA0ACgANAAgACAAOAAwACAANAA4ADAAPAAkACQAPAAsADAAOAA8ADQALAA8ADQAPAA4A"),
+"name": "Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAP//AAAAAP////8AAP///////wAA/////7hBAAAAAAAA//8AAAAA//+4QQAA//8AALhBAAAAAAAAuEEAAP//AAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAABGvgAA/////wAAAAD//wAARr4AAP////9GvgAAAAD//0a+AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_us6sv"]
+resource_name = "quaternius_cc0-bathroom-mirror-672_Cube_018"
+_surfaces = [{
+"aabb": AABB(-0.32403952, -0.46503568, -0.039963733, 0.64807904, 0.92966664, 0.10197026),
+"format": 34896613383,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABgAFAAcABAAIAAUABgAHAAkACgAIAAQACQAHAAsACgALAAgACQALAAoADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAVABcAGAAZABUAGgAbABwAGgAdABsAHgAbAB0AHgAfABsAIAAhACIAIAAjACEAJAAhACMAJAAlACEAJgAnACgAJgApACcAKgAnACkAKgArACcALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQAA8AD4APwBBAD0AQAA+AEIAPwBDAEEAQwBAAEIAQwBCAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0A"),
+"material": SubResource("StandardMaterial3D_50glc"),
+"name": "Black",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray("TgMpBiwE/79OA///fMT/v04DKQZ8xP+/TgP//ywE/7+w/CkGfMT/v8bjmfB8xP+/sPz//3zE/784HJnwfMT/v8bjjhV8xP+/TgP//3zE/79OAykGfMT/vzgcjhV8xP+/sPwpBnzE//+w/P//LAT//7D8KQYsBP//sPz//3zE//9OAykGfMT//7D8KQYsBP//TgMpBiwE//+w/CkGfMT//zgcjhV8xP//xuOOFVRk///G444VfMT//zgcjhVUZP//OByOFSwE///G444VLAT//zgcmfB8xP//OByOFVRk//84HI4VfMT//zgcmfBUZP//OByZ8CwE//84HI4VLAT//8bjmfB8xP//OByZ8FRk//84HJnwfMT//8bjmfBUZP//xuOZ8CwE//84HJnwLAT//8bjjhV8xP+/xuOZ8FRk/7/G45nwfMT/v8bjjhVUZP+/xuOOFSwE/7/G45nwLAT/vwAAAAD///////8AAAAA//8AAAAAAAD/////AAD///////8AAP///////ysJAAD/////AAAAAP////8rCf///////ysJ////vwAAAAD///+/AAArCf///7///wAA////vwAAKwkAAP+/AAAAAP///78AAAAAAAD/vwAAKwn///+/sPwpBiwE///G45nwLAT//8bjjhUsBP//sPz//ywE//9OAykGLAT//zgcmfAsBP//OByOFSwE//9OA///LAT/////KwkAAP//AAAAAAAA/////wAAAAD//wAAKwkAAP//sPz//3zE//9OA///LAT//7D8//8sBP//TgP//3zE/////ysJ/////wAAKwkAAP////8rCQAA//8AACsJ//////9/////f////3////9/////f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/+//3//v/9//7//f/+//3//f/8//3//P/9//z//f/8//3//v/9//7//f/+//3//v/9//7//f/+//7//f/+//3//v/9//7//f/+//3//v/9//3//P/9//z//f/8//3//P/9//z//f/8//3////9/////f////3////9/////f////3//P/9//z//f/8//3//P/+//3//v/9//7//f/+//3//f/9//3//f/9//3//f/9//3////9/////f////3////8//7//P/+//z//v/8//7//P/+//z//v/8//7//P/+//z//v/8//7//P/+//z//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/")
+}, {
+"aabb": AABB(-0.2571259, -0.39630088, -0.0061952635, 0.51425165, 0.81457376, 0.012390527),
+"format": 34896613383,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_wmxsh"),
+"name": "Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("//8AAP///78AAP//////v/////////+/AAAAAP///7///wAAuEH//wAA//+4Qf//AAAAALhB////////uEH//wAAAAD///////8AALhB//8AAAAAuEH/////AAD/////AAD//////78AAAAAuEH/vwAA//+4Qf+/AAAAAP///7///////////wAA//+4Qf///////7hB//8AAP//////////AAD//////////7hB/////wAAuEH///////////////8AAAAA//8AAP//AAD//wAAAAAAAP///////wAA/////wAARr7/vwAA//9Gvv+//////0a+/78AAAAARr7/vwAAAAAAAP////8AAEa+/////wAAAAD//wAAAABGvv//AAD//wAA/78AAAAARr7/vwAAAAAAAP+/AAD//0a+/7//////AAD//wAA//9Gvv//AAD//wAA////////Rr7/////AAAAAP///////0a+////////AAD/////AABGvv///3//f/9//3//f/9//3//f/8//7//P/+//z//v/8//7//f/8//3//P/9//z//f/8//3////9/////f////3////9//7//f/+//3//v/9//7//v/9//7//f/+//3//v/9//z//v/8//7//P/+//z//v/9//3//f/9//3//f/9//3//f/8//3//P/9//z//f/8//3////9/////f////3////9//7//f/+//3//v/9//7//v/9//7//f/+//3//v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wa26t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6t0p"]
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvvly"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v6t0p"]
+points = PackedVector3Array(-0.32403952, -0.46503568, -0.039963733, 0.32403952, -0.46503568, -0.039963733, -0.32403952, -0.46503568, 0.062006537, -0.32403952, -0.4318203, -0.039963733, 0.32403952, -0.46503568, 0.062006537, 0.32403952, -0.4318203, -0.039963733, -0.32403952, -0.4318203, 0.062006537, -0.3157292, 0.46463096, -0.038306817, 0.32403952, -0.4318203, 0.062006537, 0.3156023, 0.46463096, -0.038306817, -0.3157292, 0.46463096, 0.038300645, 0.3156023, 0.46463096, 0.038300645)
+
+[node name="quaternius_cc0-bathroom-mirror-672" type="Node3D" unique_id=1734432091]
+
+[node name="Bathroom_Mirror1" type="MeshInstance3D" parent="." unique_id=381178499]
+mesh = SubResource("ArrayMesh_us6sv")
+
+[node name="mirror" type="MeshInstance3D" parent="Bathroom_Mirror1" unique_id=1166107773]
+transform = Transform3D(0.5552659, 0, 0, 0, 0.8760971, 0, 0, 0, 0.0128743965, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_v6t0p")
+mesh = SubResource("BoxMesh_yvvly")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bathroom_Mirror1" unique_id=1353107082]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bathroom_Mirror1/StaticBody3D" unique_id=1805560203]
+shape = SubResource("ConvexPolygonShape3D_v6t0p")

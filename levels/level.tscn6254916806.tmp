@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dtwcvj350q55n"]
+
+[ext_resource type="Texture2D" uid="uid://c6aljypfudk4n" path="res://icon.svg" id="1_80vhd"]
+[ext_resource type="PackedScene" uid="uid://b2d68chk5j7ea" path="res://player/player.tscn" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://d1xw2w7v6bafx" path="res://scenery/house.tscn" id="3_cwqvt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjsbj"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cwqvt"]
+sky_material = SubResource("ProceduralSkyMaterial_hjsbj")
+
+[sub_resource type="Environment" id="Environment_5mrsh"]
+background_mode = 2
+sky = SubResource("Sky_cwqvt")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umreq"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjsbj"]
+albedo_texture = ExtResource("1_80vhd")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_umreq"]
+
+[node name="level" type="Node3D" unique_id=469341114]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1499938262]
+environment = SubResource("Environment_5mrsh")
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1637829481]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1042292746]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=994802715]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hjsbj")
+mesh = SubResource("BoxMesh_umreq")
+
+[node name="player" parent="." unique_id=53842522 instance=ExtResource("2_hjsbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6564767, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1670819717]
+transform = Transform3D(0.7431448, 0.5481197, -0.38379756, 0, 0.57357645, 0.81915206, 0.6691306, -0.6087486, 0.42625037, 0, 5.5936136, 0)
+shadow_enabled = true
+
+[node name="house" parent="." unique_id=1699233106 instance=ExtResource("3_cwqvt")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.9782305, 2.2415266, 13.733213)

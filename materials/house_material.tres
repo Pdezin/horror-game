@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dskglp2tlhgy5"]
+
+[ext_resource type="Texture2D" uid="uid://di3sn674hu6uc" path="res://textures/house.jpg" id="1_kfeee"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kfeee"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1rxbs"]
+noise = SubResource("FastNoiseLite_kfeee")
+seamless = true
+as_normal_map = true
+bump_strength = 4.0
+
+[resource]
+albedo_texture = ExtResource("1_kfeee")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = SubResource("NoiseTexture2D_1rxbs")
+uv1_scale = Vector3(5, 5, 5)

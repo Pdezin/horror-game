@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ble8hfsdynb2v"]
+
+[ext_resource type="Texture2D" uid="uid://j3d24qxxhamx" path="res://textures/basement.jpg" id="1_tjsvg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tjsvg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uc23c"]
+noise = SubResource("FastNoiseLite_tjsvg")
+seamless = true
+as_normal_map = true
+bump_strength = 12.0
+
+[resource]
+albedo_texture = ExtResource("1_tjsvg")
+roughness = 0.6
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_uc23c")
+uv1_scale = Vector3(-5, -5, -5)

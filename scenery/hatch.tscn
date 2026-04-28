@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://4uxnr18xmlue"]
+
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="1_p2ua4"]
+[ext_resource type="Script" uid="uid://d3wk5sbnibym7" path="res://general_script/hatch.gd" id="1_qdp1l"]
+[ext_resource type="Material" uid="uid://ds0yu2k1f5w8x" path="res://materials/stone_material.tres" id="2_qdp1l"]
+[ext_resource type="Texture2D" uid="uid://c8tt28fpghrjr" path="res://textures/metal.jpg" id="4_tp633"]
+[ext_resource type="AudioStream" uid="uid://c3awjbj62d5q1" path="res://sounds/hatch_open.mp3" id="5_wuci5"]
+[ext_resource type="AudioStream" uid="uid://cktif88is48ao" path="res://sounds/unlock.mp3" id="6_10gwi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3hter"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2sjxs"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6b6k3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5654v"]
+noise = SubResource("FastNoiseLite_6b6k3")
+seamless = true
+as_normal_map = true
+bump_strength = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuci5"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("4_tp633")
+metallic = 0.6
+roughness = 0.19
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = SubResource("NoiseTexture2D_5654v")
+
+[sub_resource type="PrismMesh" id="PrismMesh_tp633"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wuci5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p2ua4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdp1l"]
+size = Vector3(0.81781006, 0.803833, 1.0673218)
+
+[sub_resource type="Animation" id="Animation_qdp1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tp633"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.8325957)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wuci5"]
+_data = {
+&"RESET": SubResource("Animation_qdp1l"),
+&"open": SubResource("Animation_tp633")
+}
+
+[node name="hatch" type="Node3D" unique_id=1564630104]
+script = ExtResource("1_qdp1l")
+
+[node name="frame" type="Node3D" parent="." unique_id=993215411]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.3680252, 0.08113046, 0)
+
+[node name="frame" type="MeshInstance3D" parent="frame" unique_id=1207904811]
+transform = Transform3D(0.7373073, 0, 0, 0, 0.030319424, 0, 0, 0, 1, 0.36006153, -0.0029734522, 0)
+material_override = ExtResource("2_qdp1l")
+mesh = SubResource("BoxMesh_3hter")
+
+[node name="push" type="MeshInstance3D" parent="frame/frame" unique_id=450997735]
+transform = Transform3D(0.045844223, 0, 0, 0, 0.48977083, 0, 0, 0, 0.24994802, 0.36761835, 1.0537059, 0)
+material_override = ExtResource("1_p2ua4")
+mesh = SubResource("BoxMesh_2sjxs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="frame/frame" unique_id=25311178]
+transform = Transform3D(0.04822965, 0, 0, 0, -7.4683703e-07, 0.12633517, 0, -0.04020276, -3.7191222e-07, 0.36761835, 0.53587294, 0.16981328)
+material_override = SubResource("StandardMaterial3D_wuci5")
+mesh = SubResource("PrismMesh_tp633")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="frame/frame" unique_id=869470852]
+transform = Transform3D(0.03137772, 0, 0, 0, 0.12633519, 0, 0, 0, 0.026231254, 0.36761835, 0.4749894, 0.15973452)
+material_override = SubResource("StandardMaterial3D_wuci5")
+mesh = SubResource("CylinderMesh_wuci5")
+
+[node name="frame" type="StaticBody3D" parent="frame/frame" unique_id=1569791591]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frame/frame/frame" unique_id=249042540]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_p2ua4")
+
+[node name="frames" type="Node3D" parent="." unique_id=1480279066]
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="frames" unique_id=1199840072]
+transform = Transform3D(0.71973985, 0, 0, 0, 0.07399105, 0, 0, 0, 0.049306333, 0, 0.06282443, -0.52192396)
+material_override = ExtResource("2_qdp1l")
+mesh = SubResource("BoxMesh_3hter")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="frames" unique_id=1308973215]
+transform = Transform3D(-4.804997e-08, 0, 0.049306333, 0, 0.07399105, 0, -1.0992552, 0, -2.1552482e-09, -0.38204432, 0.06282443, 0.0041908324)
+material_override = ExtResource("2_qdp1l")
+mesh = SubResource("BoxMesh_3hter")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="frames" unique_id=47060022]
+transform = Transform3D(-4.804997e-08, 0, 0.049306333, 0, 0.07399105, 0, -1.0992552, 0, -2.1552482e-09, 0.38357714, 0.06282443, 0.0041908324)
+material_override = ExtResource("2_qdp1l")
+mesh = SubResource("BoxMesh_3hter")
+
+[node name="hatch_area" type="StaticBody3D" parent="." unique_id=740314902]
+
+[node name="hatch" type="CollisionShape3D" parent="hatch_area" unique_id=667070155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00033569336, 0.4143653, -0.0152282715)
+shape = SubResource("BoxShape3D_qdp1l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=680001935]
+libraries/ = SubResource("AnimationLibrary_wuci5")
+
+[node name="open" type="AudioStreamPlayer3D" parent="." unique_id=1520728612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009160608, 0.19063643, 0.41247708)
+stream = ExtResource("5_wuci5")
+max_distance = 20.0
+bus = &"SFX"
+
+[node name="unlock" type="AudioStreamPlayer3D" parent="." unique_id=712047595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009160608, 0.19063643, 0.41247708)
+stream = ExtResource("6_10gwi")
+max_distance = 20.0
+bus = &"SFX"
