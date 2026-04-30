@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://xm26eacg42ei" path="res://ui/pause_menu.tscn" id="3_iwa1g"]
 [ext_resource type="PackedScene" uid="uid://d15gpx4vdn5tq" path="res://ui/task_ui.tscn" id="3_lp0io"]
 [ext_resource type="PackedScene" uid="uid://dha20d7dosp32" path="res://ui/safe_ui.tscn" id="5_lp0io"]
+[ext_resource type="PackedScene" uid="uid://icwfayugwrbk" path="res://ui/settings.tscn" id="6_g1ro4"]
 [ext_resource type="PackedScene" uid="uid://i8dsx42db3vk" path="res://ui/cutscene_transition_ui.tscn" id="6_ykvpg"]
+[ext_resource type="PackedScene" uid="uid://ccosaedxpx87m" path="res://ui/controls.tscn" id="7_b6i2q"]
+[ext_resource type="AudioStream" uid="uid://bx4dxq53kv0n5" path="res://sounds/button_click.mp3" id="7_f7sc3"]
+[ext_resource type="AudioStream" uid="uid://csr7pbe66s6d2" path="res://sounds/button_hover.mp3" id="8_g1ro4"]
 
 [node name="player_ui" type="Control" unique_id=718627395]
 process_mode = 3
@@ -61,13 +65,41 @@ layer = 2
 [node name="pause_menu" parent="." unique_id=1719580880 instance=ExtResource("3_iwa1g")]
 layer = 3
 
+[node name="settings" parent="." unique_id=1633769941 instance=ExtResource("6_g1ro4")]
+layer = 3
+
+[node name="controls" parent="." unique_id=1062013468 instance=ExtResource("7_b6i2q")]
+layer = 3
+
 [node name="cutscene_transition_ui" parent="." unique_id=648957180 instance=ExtResource("6_ykvpg")]
 layout_mode = 1
 
+[node name="interact" type="AudioStreamPlayer" parent="." unique_id=678804681]
+stream = ExtResource("7_f7sc3")
+bus = &"SFX"
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=2123279877]
+stream = ExtResource("8_g1ro4")
+volume_db = 8.0
+bus = &"SFX"
+
 [connection signal="pressed" from="interactive_ui/safe_ui/frame/confirm_button" to="." method="confirm_safe_password"]
 [connection signal="pressed" from="interactive_ui/safe_ui/frame/back_button" to="." method="close_safe_password"]
+[connection signal="mouse_entered" from="pause_menu/menu/resume_button" to="." method="play_hover"]
 [connection signal="pressed" from="pause_menu/menu/resume_button" to="." method="resume_game"]
+[connection signal="mouse_entered" from="pause_menu/menu/settings_button" to="." method="play_hover"]
+[connection signal="pressed" from="pause_menu/menu/settings_button" to="." method="open_settings"]
+[connection signal="mouse_entered" from="pause_menu/menu/controls_button" to="." method="play_hover"]
+[connection signal="pressed" from="pause_menu/menu/controls_button" to="." method="open_controls"]
+[connection signal="mouse_entered" from="pause_menu/menu/mainmenu_button" to="." method="play_hover"]
+[connection signal="mouse_entered" from="pause_menu/menu/quitgame_button" to="." method="play_hover"]
 [connection signal="pressed" from="pause_menu/menu/quitgame_button" to="." method="quit_game"]
+[connection signal="mouse_entered" from="settings/ok_button" to="." method="play_hover"]
+[connection signal="pressed" from="settings/ok_button" to="." method="close_menus"]
+[connection signal="mouse_entered" from="controls/ok_button" to="." method="play_hover"]
+[connection signal="pressed" from="controls/ok_button" to="." method="close_menus"]
 
 [editable path="interactive_ui/safe_ui"]
 [editable path="pause_menu"]
+[editable path="settings"]
+[editable path="controls"]

@@ -29,6 +29,6 @@ grow_horizontal = 0
 theme_override_font_sizes/normal_font_size = 18
 text_direction = 2
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1596229127]
+[node name="notification" type="AudioStreamPlayer" parent="." unique_id=696386770]
 stream = ExtResource("1_66uto")
 bus = &"SFX"

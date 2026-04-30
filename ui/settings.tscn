@@ -1,0 +1,504 @@
+[gd_scene format=3 uid="uid://icwfayugwrbk"]
+
+[node name="settings" type="CanvasLayer" unique_id=1633769941]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2036724660]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="settings_text" type="RichTextLabel" parent="." unique_id=751356943]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_right = 0.95500004
+anchor_bottom = 0.120000005
+offset_left = 0.31199646
+offset_right = -0.16003418
+offset_bottom = 0.23999786
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 50
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="visual_text" type="RichTextLabel" parent="." unique_id=139187481]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.120000005
+anchor_right = 0.293
+anchor_bottom = 0.19800001
+offset_left = 0.31199646
+offset_top = -2.7600021
+offset_right = -0.53601074
+offset_bottom = -3.304016
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Visuals"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="scaling_text" type="RichTextLabel" parent="." unique_id=277156684]
+anchors_preset = -1
+anchor_left = 0.038000003
+anchor_top = 0.569
+anchor_right = 0.289
+anchor_bottom = 0.62700003
+offset_left = 7.223999
+offset_top = 0.28799438
+offset_right = 0.07199097
+offset_bottom = -0.2960205
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "3D Scaling"
+vertical_alignment = 2
+
+[node name="scaling_slider" type="HSlider" parent="." unique_id=2138020293]
+anchors_preset = -1
+anchor_left = 0.045
+anchor_top = 0.62700003
+anchor_right = 0.29000002
+anchor_bottom = 0.66400003
+offset_left = 0.15999603
+offset_top = -0.2960205
+offset_right = -0.08001709
+offset_bottom = -0.2720337
+min_value = 0.25
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="window_mode_text" type="RichTextLabel" parent="." unique_id=1759007205]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.193
+anchor_right = 0.289
+anchor_bottom = 0.25
+offset_left = 0.31199646
+offset_top = -0.06400299
+offset_right = 0.07199097
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Window mode"
+vertical_alignment = 2
+
+[node name="window_mode_dropdown" type="OptionButton" parent="." unique_id=1127092057]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.25300002
+anchor_right = 0.28800002
+anchor_bottom = 0.31500003
+offset_left = 0.31199646
+offset_top = 0.055984497
+offset_right = 0.2239685
+offset_bottom = -0.120010376
+theme_override_font_sizes/font_size = 18
+selected = 1
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
+
+[node name="fpscap_text" type="RichTextLabel" parent="." unique_id=708142253]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.319
+anchor_right = 0.289
+anchor_bottom = 0.377
+offset_left = 0.31199646
+offset_top = 0.28799438
+offset_right = 0.07199097
+offset_bottom = -0.29600525
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Limit FPS"
+vertical_alignment = 2
+
+[node name="fpscap_dropdown" type="OptionButton" parent="." unique_id=392318475]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.38300002
+anchor_right = 0.28800002
+anchor_bottom = 0.44400004
+offset_left = 0.31199646
+offset_top = -2.1840057
+offset_right = 0.2239685
+offset_bottom = -1.7120361
+theme_override_font_sizes/font_size = 18
+selected = 0
+item_count = 3
+popup/item_0/text = "Unlimited"
+popup/item_0/id = 0
+popup/item_1/text = "30FPS"
+popup/item_1/id = 1
+popup/item_2/text = "60FPS"
+popup/item_2/id = 2
+
+[node name="antialiasing_text" type="RichTextLabel" parent="." unique_id=1118537668]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.446
+anchor_right = 0.289
+anchor_bottom = 0.5
+offset_left = 0.31199646
+offset_top = -0.0079956055
+offset_right = 0.07199097
+offset_bottom = 2.0
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Anti-Aliasing"
+vertical_alignment = 2
+
+[node name="antialiasing_dropdown" type="OptionButton" parent="." unique_id=1121245810]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.50600004
+anchor_right = 0.28800002
+anchor_bottom = 0.568
+offset_left = 0.31199646
+offset_top = 0.111968994
+offset_right = 0.2239685
+offset_bottom = -0.06402588
+theme_override_font_sizes/font_size = 18
+selected = 1
+item_count = 6
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "FXAA"
+popup/item_1/id = 1
+popup/item_2/text = "TAA"
+popup/item_2/id = 2
+popup/item_3/text = "MSAA 2X"
+popup/item_3/id = 3
+popup/item_4/text = "MSAA 4X"
+popup/item_4/id = 4
+popup/item_5/text = "MSAA 8X"
+popup/item_5/id = 5
+
+[node name="shadow_quality_text" type="RichTextLabel" parent="." unique_id=2102713189]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.657
+anchor_right = 0.289
+anchor_bottom = 0.71500003
+offset_left = 0.31199646
+offset_top = 0.26400757
+offset_right = 0.07199097
+offset_bottom = -0.32000732
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Shadow Quality"
+vertical_alignment = 2
+
+[node name="shadow_quality_dropdown" type="OptionButton" parent="." unique_id=764299121]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.71800005
+anchor_right = 0.28800002
+anchor_bottom = 0.77900004
+offset_left = 0.31199646
+offset_top = -0.2640381
+offset_right = 0.2239685
+offset_bottom = 0.2079773
+theme_override_font_sizes/font_size = 18
+selected = 1
+item_count = 5
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+popup/item_4/text = "Ultra"
+popup/item_4/id = 4
+
+[node name="vsync_text" type="RichTextLabel" parent="." unique_id=482644565]
+anchors_preset = -1
+anchor_left = 0.34300002
+anchor_top = 0.48800004
+anchor_right = 0.55600005
+anchor_bottom = 0.559
+offset_left = -0.13601685
+offset_top = -7.2240295
+offset_right = -0.51208496
+offset_bottom = -7.2319946
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "V-Sync"
+vertical_alignment = 2
+
+[node name="vsync_check" type="CheckBox" parent="." unique_id=1967722715]
+anchors_preset = -1
+anchor_left = 0.30400002
+anchor_top = 0.48800004
+anchor_right = 0.34500003
+anchor_bottom = 0.56
+offset_left = -0.20800781
+offset_top = -0.22402954
+offset_right = -23.440033
+offset_bottom = -22.880005
+scale = Vector2(1.96, 1.96)
+alignment = 1
+
+[node name="ssil_text" type="RichTextLabel" parent="." unique_id=1071933873]
+anchors_preset = -1
+anchor_left = 0.34300002
+anchor_top = 0.563
+anchor_right = 0.55600005
+anchor_bottom = 0.633
+offset_left = -0.13601685
+offset_top = -6.824005
+offset_right = -0.51208496
+offset_bottom = -7.184021
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "SSLI"
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="ssil_check" type="CheckBox" parent="." unique_id=18861534]
+anchors_preset = -1
+anchor_left = 0.30400002
+anchor_top = 0.56200004
+anchor_right = 0.34500003
+anchor_bottom = 0.634
+offset_left = -0.20800781
+offset_top = -0.17602539
+offset_right = -23.440033
+offset_bottom = -22.832
+scale = Vector2(1.96, 1.96)
+alignment = 1
+
+[node name="glow_text" type="RichTextLabel" parent="." unique_id=1313015882]
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.63900006
+anchor_right = 0.555
+anchor_bottom = 0.708
+offset_left = 0.015991211
+offset_top = -7.072052
+offset_right = -0.35998535
+offset_bottom = -6.7839966
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Glow
+"
+vertical_alignment = 2
+
+[node name="glow_check" type="CheckBox" parent="." unique_id=1947858599]
+anchors_preset = -1
+anchor_left = 0.303
+anchor_top = 0.637
+anchor_right = 0.344
+anchor_bottom = 0.71000004
+offset_left = -0.055999756
+offset_top = 0.22399902
+offset_right = -23.288025
+offset_bottom = -23.080017
+scale = Vector2(1.96, 1.96)
+alignment = 1
+
+[node name="volumetricfog_text" type="RichTextLabel" parent="." unique_id=857304088]
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.71300006
+anchor_right = 0.555
+anchor_bottom = 0.78200006
+offset_left = 0.015991211
+offset_top = -7.024048
+offset_right = -0.35998535
+offset_bottom = -6.7360535
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Volumetric Fog"
+vertical_alignment = 2
+
+[node name="volumetricfog_check" type="CheckBox" parent="." unique_id=999842731]
+anchors_preset = -1
+anchor_left = 0.303
+anchor_top = 0.711
+anchor_right = 0.344
+anchor_bottom = 0.78400004
+offset_left = -0.055999756
+offset_top = 0.27197266
+offset_right = -23.288025
+offset_bottom = -23.032013
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.96, 1.96)
+alignment = 1
+
+[node name="audio_text" type="RichTextLabel" parent="." unique_id=2056640129]
+anchors_preset = -1
+anchor_left = 0.70500004
+anchor_top = 0.116000004
+anchor_right = 0.957
+anchor_bottom = 0.193
+offset_left = -0.16003418
+offset_top = -0.16799927
+offset_right = -0.46398926
+offset_bottom = -0.06400299
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Audio
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="mastervolume_text" type="RichTextLabel" parent="." unique_id=2063852463]
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.194
+anchor_right = 0.95100003
+anchor_bottom = 0.252
+offset_left = -0.31201172
+offset_top = 0.28799438
+offset_right = -0.55200195
+offset_bottom = -0.29600525
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Master Volume"
+vertical_alignment = 2
+
+[node name="mastervolume_slider" type="HSlider" parent="." unique_id=826745142]
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.252
+anchor_right = 0.95100003
+anchor_bottom = 0.289
+offset_left = -0.46398926
+offset_top = -0.29600525
+offset_right = 0.44799805
+offset_bottom = -0.27200317
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="sfxvolume_text" type="RichTextLabel" parent="." unique_id=1598393133]
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.287
+anchor_right = 0.95100003
+anchor_bottom = 0.344
+offset_left = -0.31201172
+offset_top = 0.024002075
+offset_right = -0.55200195
+offset_bottom = 0.08799744
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "SFX Volume"
+vertical_alignment = 2
+
+[node name="sfxvolume_slider" type="HSlider" parent="." unique_id=1238931134]
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.344
+anchor_right = 0.95100003
+anchor_bottom = 0.381
+offset_left = -0.46398926
+offset_top = 0.08799744
+offset_right = 0.44799805
+offset_bottom = 0.11199951
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="musicvolume_text" type="RichTextLabel" parent="." unique_id=1014819125]
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.384
+anchor_right = 0.95100003
+anchor_bottom = 0.441
+offset_left = -0.31201172
+offset_top = 0.16799927
+offset_right = -0.55200195
+offset_bottom = 0.23199463
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Music Volume"
+vertical_alignment = 2
+
+[node name="musicvolume_slider" type="HSlider" parent="." unique_id=766676192]
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.441
+anchor_right = 0.95100003
+anchor_bottom = 0.47800002
+offset_left = -0.46398926
+offset_top = 0.23199463
+offset_right = 0.44799805
+offset_bottom = 0.25598145
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="gameplay_text" type="RichTextLabel" parent="." unique_id=1867320586]
+anchors_preset = -1
+anchor_left = 0.70500004
+anchor_top = 0.559
+anchor_right = 0.957
+anchor_bottom = 0.63600004
+offset_left = -0.16003418
+offset_top = -0.23199463
+offset_right = -0.46398926
+offset_bottom = -0.12802124
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Gameplay"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="camera_sense_text" type="RichTextLabel" parent="." unique_id=1461224069]
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.63900006
+anchor_right = 0.95100003
+anchor_bottom = 0.69600004
+offset_left = -0.31201172
+offset_top = -0.072052
+offset_right = -0.55200195
+offset_bottom = -0.008026123
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Camera Sensitivity"
+vertical_alignment = 2
+
+[node name="camera_sense_slider" type="HSlider" parent="." unique_id=1935868422]
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.69600004
+anchor_right = 0.95100003
+anchor_bottom = 0.73300004
+offset_left = -0.46398926
+offset_top = -0.008026123
+offset_right = 0.44799805
+offset_bottom = 0.015960693
+min_value = 0.1
+max_value = 0.5
+step = 0.05
+value = 0.2
+
+[node name="ok_button" type="Button" parent="." unique_id=1125356052]
+anchors_preset = -1
+anchor_left = 0.386
+anchor_top = 0.86700004
+anchor_right = 0.614
+anchor_bottom = 0.93500006
+offset_left = 0.32800293
+offset_top = 0.18395996
+offset_right = -0.32800293
+offset_bottom = 0.11993408
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 24
+text = "OK
+"

@@ -2,6 +2,8 @@ extends Control
 
 func _ready() -> void:
 	$pause_menu.visible = false
+	$settings.visible = false
+	$controls.visible = false
 	$player_ui.visible = true
 	initialize_interacted_ui()
 	initialize_tasks()
@@ -15,7 +17,7 @@ func initialize_tasks():
 	set_task("Check if anyone is home and ask for help")
 
 func set_task(task_text: String):
-	$task_ui/AudioStreamPlayer3D.play()
+	$task_ui/notification.play()
 	await get_tree().create_timer(1.5, false).timeout
 	$task_ui/task/task_text.text = task_text
 
@@ -54,6 +56,9 @@ func confirm_safe_password():
 		safe.open_safe()
 
 #MENU
+func play_hover():
+	$hover.play()
+
 func pause_game():
 	if get_tree().paused:
 		return
@@ -63,10 +68,29 @@ func pause_game():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func resume_game():
+	$interact.play()
 	$pause_menu.visible = false
 	$player_ui.visible = true
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func quit_game():
+	$interact.play()
+	await get_tree().create_timer(0.5, true).timeout
 	get_tree().quit()
+	
+func open_settings():
+	$interact.play()
+	$pause_menu.visible = false
+	$settings.visible = true
+	
+func open_controls():
+	$interact.play()
+	$pause_menu.visible = false
+	$controls.visible = true
+	
+func close_menus():
+	$interact.play()
+	$settings.visible = false
+	$controls.visible = false
+	$pause_menu.visible = true

@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Horror Game"
-run/main_scene="uid://dtwcvj350q55n"
+run/main_scene="uid://dbgosrwqn8wsv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://bt6ccv3ed7u7u"
+
+[display]
+
+window/size/mode=3
 
 [input]
 

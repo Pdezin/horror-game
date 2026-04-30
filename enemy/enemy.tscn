@@ -28,6 +28,7 @@ radius = 1.0
 [node name="growl" type="AudioStreamPlayer3D" parent="." unique_id=1038845082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9640117, 0)
 stream = ExtResource("3_pmsee")
+volume_db = -5.0
 max_distance = 30.0
 bus = &"SFX"
 

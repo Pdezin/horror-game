@@ -78,7 +78,7 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41992144]
 libraries/ = SubResource("AnimationLibrary_o88iw")
 
-[node name="eating" type="AudioStreamPlayer2D" parent="." unique_id=1670009179]
-position = Vector2(553, 311)
+[node name="eating" type="AudioStreamPlayer" parent="." unique_id=1615895516]
 stream = ExtResource("2_o88iw")
+volume_db = -5.0
 bus = &"SFX"

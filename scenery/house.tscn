@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://de0qq05lirdrb" path="res://scenery/sink.tscn" id="24_byf8s"]
 [ext_resource type="PackedScene" uid="uid://chmo6c6of0ey0" path="res://scenery/toilet_paper.tscn" id="24_l63sn"]
 [ext_resource type="PackedScene" uid="uid://3sqsce6jhgq1" path="res://scenery/toothpaste.tscn" id="25_0xgrt"]
+[ext_resource type="PackedScene" uid="uid://1cy877b6rw8q" path="res://scenery/dead_body.tscn" id="25_fhqxt"]
 [ext_resource type="PackedScene" uid="uid://4k7pbujvbuj7" path="res://scenery/bookcase_empty.tscn" id="27_hni8k"]
 [ext_resource type="PackedScene" uid="uid://c35otc6ylpk1" path="res://scenery/mirror.tscn" id="28_2f6be"]
 [ext_resource type="Texture2D" uid="uid://u27xx41xhwif" path="res://textures/picture5.jpeg" id="29_hco8t"]
@@ -214,6 +215,10 @@ transform = Transform3D(-3.2674615e-07, 0, 6.593686, 0, 6.05, 0, -7.4750805, 0, 
 [node name="blood_decal" parent="blood" unique_id=1490477901 instance=ExtResource("60_u2xn0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.434911, -14.47543, -10.189333)
 size = Vector3(3.499878, 1.9522095, 2.8569946)
+
+[node name="blood_decal8" parent="blood" unique_id=1973093980 instance=ExtResource("60_u2xn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7074995, -12.951956, -12.298252)
+size = Vector3(1.9279938, 1.9522095, 1.6781769)
 
 [node name="blood_decal2" parent="blood" unique_id=1424141456 instance=ExtResource("60_u2xn0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.294303, -14.944195, -8.134842)
@@ -425,6 +430,9 @@ transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1
 transform = Transform3D(0.26859602, 0, -3.5527137e-15, 0, 1.9548764, 0, 1.4210855e-14, 0, 0.26144913, 0.60210323, 3.33255, -0.011241525)
 material_override = ExtResource("58_itapk")
 mesh = SubResource("CylinderMesh_cyfvi")
+
+[node name="dead_body" parent="NavigationRegion3D/basement" unique_id=639691213 instance=ExtResource("25_fhqxt")]
+transform = Transform3D(2.9192784, -0.33402824, -3.4082613, -0.42215654, 4.409285, -0.7937242, 3.3984692, 0.8346493, 2.8290918, 10.827245, -13.884649, -10.881211)
 
 [node name="furniture" type="Node3D" parent="NavigationRegion3D" unique_id=1614772790]
 

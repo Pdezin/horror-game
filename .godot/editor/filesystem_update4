@@ -1,4 +1,3 @@
-res://enemy/enemy.tscn
 res://environment/nighttime.tres
 res://materials/house_material.tres
 res://materials/wall_material.tres
@@ -11,4 +10,12 @@ res://materials/metal_material.tres
 res://materials/wood2_material.tres
 res://materials/carpet_material.tres
 res://materials/gold_material.tres
-res://ui/death_screen_ui.tscn
+res://scenery/dead_body.tscn
+res://scenery/house.tscn
+res://ui/warning.tscn
+res://general_script/warning.gd
+res://ui/settings.tscn
+res://levels/level.tscn
+res://ui/player_ui.tscn
+res://general_script/player_ui.gd
+res://ui/controls.tscn

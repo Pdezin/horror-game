@@ -25,5 +25,5 @@ func interact(interact_label, take_audio):
 		pickup_key()
 
 func pickup_key():
-	queue_free()
 	Global.hasBasementKey = true
+	queue_free()
