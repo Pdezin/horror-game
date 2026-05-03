@@ -90,8 +90,8 @@ anchor_right = 0.74300003
 anchor_bottom = 0.30600002
 offset_left = -0.06399536
 offset_top = 0.20799255
-offset_right = 0.063964844
-offset_bottom = -0.28797913
+offset_right = 0.06390381
+offset_bottom = -0.28796387
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.98039216, 0, 0.18039216, 0)
@@ -113,7 +113,7 @@ offset_bottom = -0.13598633
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 0)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 28
 text = "This game contains scenes of horror, disturbing imagery, and intense atmosphere that may not be suitable for all players.
 
 Player discretion is advised.

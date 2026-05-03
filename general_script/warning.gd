@@ -1,8 +1,13 @@
 extends Control
 
-
 func _ready() -> void:
 	$CanvasLayer/AnimationPlayer.play("fade")
 	await get_tree().create_timer(7.5, false).timeout
-	get_tree().change_scene_to_file("res://levels/level.tscn")
+	change_scene()
 	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		change_scene()
+
+func change_scene():
+	get_tree().change_scene_to_file("res://ui/main_menu.tscn")

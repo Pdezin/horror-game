@@ -45,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://4k7pbujvbuj7" path="res://scenery/bookcase_empty.tscn" id="27_hni8k"]
 [ext_resource type="PackedScene" uid="uid://c35otc6ylpk1" path="res://scenery/mirror.tscn" id="28_2f6be"]
 [ext_resource type="Texture2D" uid="uid://u27xx41xhwif" path="res://textures/picture5.jpeg" id="29_hco8t"]
-[ext_resource type="Texture2D" uid="uid://deif7d2qlpa1f" path="res://textures/picture4.jpeg" id="30_8s12h"]
 [ext_resource type="PackedScene" uid="uid://cbwy8jv1n5b7q" path="res://scenery/plant.tscn" id="31_jslb4"]
 [ext_resource type="PackedScene" uid="uid://rxk6q0ly6bx1" path="res://scenery/plant_large.tscn" id="32_0xgrt"]
 [ext_resource type="PackedScene" uid="uid://tgp1kwo1jnfw" path="res://scenery/chick.tscn" id="35_ipmbr"]
@@ -62,6 +61,8 @@
 [ext_resource type="PackedScene" uid="uid://be6q0kxu0j4e0" path="res://scenery/box.tscn" id="52_f14gr"]
 [ext_resource type="PackedScene" uid="uid://feav2kwun6ok" path="res://scenery/bicycle.tscn" id="53_dxrk6"]
 [ext_resource type="PackedScene" uid="uid://0l6ejo358xcu" path="res://scenery/safe.tscn" id="54_5mc74"]
+[ext_resource type="Texture2D" uid="uid://dpkpkq7w6lr76" path="res://textures/wood_bg.png" id="55_fhqxt"]
+[ext_resource type="Texture2D" uid="uid://bxgs5gte3cwky" path="res://textures/logo.png" id="56_ny6lr"]
 [ext_resource type="PackedScene" uid="uid://c7mgd5oj0r4ng" path="res://scenery/powerbox.tscn" id="57_cyfvi"]
 [ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="58_itapk"]
 [ext_resource type="PackedScene" uid="uid://j75sg8ty1c1i" path="res://scenery/blood_decal.tscn" id="60_u2xn0"]
@@ -144,13 +145,10 @@ albedo_texture = SubResource("CompressedTexture2D_42jcm")
 albedo_texture = ExtResource("29_hco8t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyfvi"]
-albedo_texture = ExtResource("30_8s12h")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6pbla"]
-load_path = "res://.godot/imported/picture3.jpg-23abee37b91622adea2ebfe1e680fa8f.s3tc.ctex"
+albedo_texture = ExtResource("55_fhqxt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7vup"]
-albedo_texture = SubResource("CompressedTexture2D_6pbla")
+albedo_texture = ExtResource("56_ny6lr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_w7og5"]
 

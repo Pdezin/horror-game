@@ -83,6 +83,91 @@ stream = ExtResource("8_g1ro4")
 volume_db = 8.0
 bus = &"SFX"
 
+[node name="confirmation" type="CanvasLayer" parent="." unique_id=2136179707]
+layer = 4
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="confirmation" unique_id=289281021]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28627452)
+
+[node name="modal" type="Control" parent="confirmation" unique_id=1105177638]
+layout_mode = 3
+anchor_left = 0.38900003
+anchor_top = 0.296
+anchor_right = 0.611
+anchor_bottom = 0.69100004
+offset_left = -168.12802
+offset_top = -107.808
+offset_right = 168.12799
+offset_bottom = 116.231964
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="confirmation/modal" unique_id=496332509]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.29200003
+anchor_right = 1.0
+anchor_bottom = 0.74200004
+offset_top = -0.16001892
+offset_bottom = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0546875, 0.0546875, 0.0546875, 1)
+
+[node name="no" type="Button" parent="confirmation/modal" unique_id=1391084313]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.569
+anchor_right = 0.47700003
+anchor_bottom = 0.65800005
+offset_left = 0.048000336
+offset_top = -0.11999512
+offset_right = -0.079956055
+offset_bottom = -0.84002686
+theme_override_font_sizes/font_size = 24
+text = "No"
+
+[node name="yes" type="Button" parent="confirmation/modal" unique_id=1858261250]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.527
+anchor_top = 0.57500005
+anchor_right = 0.92300004
+anchor_bottom = 0.656
+offset_left = 0.015991211
+offset_top = -3.0000305
+offset_right = -0.11193848
+offset_bottom = 0.11999512
+theme_override_font_sizes/font_size = 24
+text = "Yes"
+
+[node name="confirmation_text" type="RichTextLabel" parent="confirmation/modal" unique_id=1750464778]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.358
+anchor_right = 0.919
+anchor_bottom = 0.546
+offset_left = 0.048000336
+offset_top = 0.1599884
+offset_right = -0.048034668
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Are you sure? Your progress will not be saved"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="interactive_ui/safe_ui/frame/confirm_button" to="." method="confirm_safe_password"]
 [connection signal="pressed" from="interactive_ui/safe_ui/frame/back_button" to="." method="close_safe_password"]
 [connection signal="mouse_entered" from="pause_menu/menu/resume_button" to="." method="play_hover"]
@@ -92,12 +177,17 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="pause_menu/menu/controls_button" to="." method="play_hover"]
 [connection signal="pressed" from="pause_menu/menu/controls_button" to="." method="open_controls"]
 [connection signal="mouse_entered" from="pause_menu/menu/mainmenu_button" to="." method="play_hover"]
+[connection signal="pressed" from="pause_menu/menu/mainmenu_button" to="." method="main_menu"]
 [connection signal="mouse_entered" from="pause_menu/menu/quitgame_button" to="." method="play_hover"]
 [connection signal="pressed" from="pause_menu/menu/quitgame_button" to="." method="quit_game"]
 [connection signal="mouse_entered" from="settings/ok_button" to="." method="play_hover"]
 [connection signal="pressed" from="settings/ok_button" to="." method="close_menus"]
 [connection signal="mouse_entered" from="controls/ok_button" to="." method="play_hover"]
 [connection signal="pressed" from="controls/ok_button" to="." method="close_menus"]
+[connection signal="mouse_entered" from="confirmation/modal/no" to="." method="play_hover"]
+[connection signal="pressed" from="confirmation/modal/no" to="." method="back_confirmation"]
+[connection signal="mouse_entered" from="confirmation/modal/yes" to="." method="play_hover"]
+[connection signal="pressed" from="confirmation/modal/yes" to="." method="confirm_exit_game"]
 
 [editable path="interactive_ui/safe_ui"]
 [editable path="pause_menu"]

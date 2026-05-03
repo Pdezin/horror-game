@@ -1,5 +1,6 @@
-res://ui/
 res://general_script/
+res://ui/
+res://
 res://scenery/
 res://sounds/
 res://levels/
@@ -7,5 +8,4 @@ D:/Downloads/
 res://enemy/
 res://materials/
 res://environment/
-res://
 res://player/

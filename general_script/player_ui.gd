@@ -1,17 +1,23 @@
 extends Control
 
+var want_quit_game = false
+
 func _ready() -> void:
-	$pause_menu.visible = false
-	$settings.visible = false
-	$controls.visible = false
-	$player_ui.visible = true
+	hide_menus()
 	initialize_interacted_ui()
 	initialize_tasks()
 		
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pause_game()
-	
+
+func hide_menus():
+	$pause_menu.visible = false
+	$settings.visible = false
+	$controls.visible = false
+	$player_ui.visible = true
+	$confirmation.visible = false
+
 #TASKS
 func initialize_tasks():
 	set_task("Check if anyone is home and ask for help")
@@ -73,12 +79,31 @@ func resume_game():
 	$player_ui.visible = true
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func main_menu():
+	$interact.play()
+	want_quit_game = false
+	$confirmation.visible = true
 	
 func quit_game():
 	$interact.play()
-	await get_tree().create_timer(0.5, true).timeout
-	get_tree().quit()
+	want_quit_game = true
+	$confirmation.visible = true
 	
+func confirm_exit_game():
+	$interact.play()
+	await get_tree().create_timer(0.5, true).timeout
+	hide_menus()
+	if want_quit_game:
+		get_tree().quit()
+	else:
+		get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+
+func back_confirmation():
+	$interact.play()
+	want_quit_game = false
+	$confirmation.visible = false
+
 func open_settings():
 	$interact.play()
 	$pause_menu.visible = false

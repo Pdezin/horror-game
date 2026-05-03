@@ -21,3 +21,17 @@ func generate_safe_password() -> String:
 	var password = str(rng.randi_range(1000, 9999))
 	print("password:" + password)
 	return password
+
+#SETTINGS
+var camera_sensitivity = 0.2
+var ssil_enabled = false
+var glow_enabled = false
+var volumetric_fog_enabled = false
+
+func set_environment_settings(environment: Environment):
+	if environment == null:
+		return
+	
+	environment.ssil_enabled = ssil_enabled
+	environment.glow_enabled = glow_enabled
+	environment.volumetric_fog_enabled = volumetric_fog_enabled

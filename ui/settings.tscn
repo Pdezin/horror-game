@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://icwfayugwrbk"]
 
+[ext_resource type="Script" uid="uid://db4mo6kaqeaf3" path="res://general_script/settings.gd" id="1_7kwmf"]
+
 [node name="settings" type="CanvasLayer" unique_id=1633769941]
+script = ExtResource("1_7kwmf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2036724660]
 anchors_preset = 15
@@ -96,7 +99,7 @@ offset_top = 0.055984497
 offset_right = 0.2239685
 offset_bottom = -0.120010376
 theme_override_font_sizes/font_size = 18
-selected = 1
+selected = 0
 item_count = 3
 popup/item_0/text = "Windowed"
 popup/item_0/id = 0
@@ -223,116 +226,86 @@ popup/item_4/id = 4
 [node name="vsync_text" type="RichTextLabel" parent="." unique_id=482644565]
 anchors_preset = -1
 anchor_left = 0.34300002
-anchor_top = 0.48800004
-anchor_right = 0.55600005
-anchor_bottom = 0.559
+anchor_top = 0.52500004
+anchor_right = 0.34300002
+anchor_bottom = 0.52500004
 offset_left = -0.13601685
-offset_top = -7.2240295
-offset_right = -0.51208496
-offset_bottom = -7.2319946
+offset_top = -23.200012
+offset_right = 82.86398
+offset_bottom = 22.799988
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "V-Sync"
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="vsync_check" type="CheckBox" parent="." unique_id=1967722715]
 anchors_preset = -1
-anchor_left = 0.30400002
-anchor_top = 0.48800004
-anchor_right = 0.34500003
-anchor_bottom = 0.56
-offset_left = -0.20800781
-offset_top = -0.22402954
-offset_right = -23.440033
-offset_bottom = -22.880005
+anchor_left = 0.324
+anchor_top = 0.52400005
+anchor_right = 0.324
+anchor_bottom = 0.52400005
+offset_left = -23.247986
+offset_top = -23.552032
+offset_right = 0.75201416
+offset_bottom = 0.44796753
 scale = Vector2(1.96, 1.96)
 alignment = 1
 
 [node name="ssil_text" type="RichTextLabel" parent="." unique_id=1071933873]
 anchors_preset = -1
 anchor_left = 0.34300002
-anchor_top = 0.563
-anchor_right = 0.55600005
-anchor_bottom = 0.633
+anchor_top = 0.6
+anchor_right = 0.34300002
+anchor_bottom = 0.6
 offset_left = -0.13601685
-offset_top = -6.824005
-offset_right = -0.51208496
-offset_bottom = -7.184021
+offset_top = -22.800018
+offset_right = 82.86398
+offset_bottom = 22.199982
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "SSLI"
 horizontal_alignment = 3
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="ssil_check" type="CheckBox" parent="." unique_id=18861534]
 anchors_preset = -1
-anchor_left = 0.30400002
-anchor_top = 0.56200004
-anchor_right = 0.34500003
-anchor_bottom = 0.634
-offset_left = -0.20800781
-offset_top = -0.17602539
-offset_right = -23.440033
-offset_bottom = -22.832
+anchor_left = 0.324
+anchor_top = 0.59800005
+anchor_right = 0.324
+anchor_bottom = 0.59800005
+offset_left = -23.247986
+offset_top = -23.504028
+offset_right = 0.75201416
+offset_bottom = 0.49597168
 scale = Vector2(1.96, 1.96)
 alignment = 1
 
 [node name="glow_text" type="RichTextLabel" parent="." unique_id=1313015882]
 anchors_preset = -1
 anchor_left = 0.342
-anchor_top = 0.63900006
-anchor_right = 0.555
-anchor_bottom = 0.708
+anchor_top = 0.675
+anchor_right = 0.342
+anchor_bottom = 0.675
 offset_left = 0.015991211
-offset_top = -7.072052
-offset_right = -0.35998535
-offset_bottom = -6.7839966
+offset_top = -22.399994
+offset_right = 84.01599
+offset_bottom = 22.600006
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Glow
 "
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="glow_check" type="CheckBox" parent="." unique_id=1947858599]
 anchors_preset = -1
-anchor_left = 0.303
-anchor_top = 0.637
-anchor_right = 0.344
-anchor_bottom = 0.71000004
-offset_left = -0.055999756
-offset_top = 0.22399902
-offset_right = -23.288025
-offset_bottom = -23.080017
-scale = Vector2(1.96, 1.96)
-alignment = 1
-
-[node name="volumetricfog_text" type="RichTextLabel" parent="." unique_id=857304088]
-anchors_preset = -1
-anchor_left = 0.342
-anchor_top = 0.71300006
-anchor_right = 0.555
-anchor_bottom = 0.78200006
-offset_left = 0.015991211
-offset_top = -7.024048
-offset_right = -0.35998535
-offset_bottom = -6.7360535
-theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
-theme_override_font_sizes/normal_font_size = 22
-text = "Volumetric Fog"
-vertical_alignment = 2
-
-[node name="volumetricfog_check" type="CheckBox" parent="." unique_id=999842731]
-anchors_preset = -1
-anchor_left = 0.303
-anchor_top = 0.711
-anchor_right = 0.344
-anchor_bottom = 0.78400004
-offset_left = -0.055999756
-offset_top = 0.27197266
-offset_right = -23.288025
-offset_bottom = -23.032013
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.323
+anchor_top = 0.674
+anchor_right = 0.323
+anchor_bottom = 0.674
+offset_left = -23.096008
+offset_top = -23.752014
+offset_right = 0.9039917
+offset_bottom = 0.24798584
 scale = Vector2(1.96, 1.96)
 alignment = 1
 
@@ -502,3 +475,16 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 24
 text = "OK
 "
+
+[connection signal="value_changed" from="scaling_slider" to="." method="scale_3d"]
+[connection signal="item_selected" from="window_mode_dropdown" to="." method="set_window_mode"]
+[connection signal="item_selected" from="fpscap_dropdown" to="." method="set_fps_cap"]
+[connection signal="item_selected" from="antialiasing_dropdown" to="." method="set_aa"]
+[connection signal="item_selected" from="shadow_quality_dropdown" to="." method="set_shadows"]
+[connection signal="toggled" from="vsync_check" to="." method="set_vsync"]
+[connection signal="toggled" from="ssil_check" to="." method="set_ssil"]
+[connection signal="toggled" from="glow_check" to="." method="set_glow"]
+[connection signal="value_changed" from="mastervolume_slider" to="." method="set_master_volume"]
+[connection signal="value_changed" from="sfxvolume_slider" to="." method="set_sfx_volume"]
+[connection signal="value_changed" from="musicvolume_slider" to="." method="set_music_volume"]
+[connection signal="value_changed" from="camera_sense_slider" to="." method="set_look_speed"]

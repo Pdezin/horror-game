@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bubgeao6t5ami"]
+
+[node name="credits" type="CanvasLayer" unique_id=933425196]
+
+[node name="bg" type="ColorRect" parent="." unique_id=1983484696]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="title_text" type="RichTextLabel" parent="." unique_id=361508851]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_right = 0.95500004
+anchor_bottom = 0.120000005
+offset_left = 0.31199646
+offset_right = -0.16003418
+offset_bottom = 0.23999786
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 50
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ok_button" type="Button" parent="." unique_id=1951722214]
+anchors_preset = -1
+anchor_left = 0.386
+anchor_top = 0.86700004
+anchor_right = 0.614
+anchor_bottom = 0.93500006
+offset_left = 0.32800293
+offset_top = 0.18395996
+offset_right = -0.32800293
+offset_bottom = 0.11993408
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 24
+text = "OK
+"
+
+[node name="credits_text" type="RichTextLabel" parent="." unique_id=1748738029]
+anchors_preset = -1
+anchor_left = 0.37500003
+anchor_top = 0.296
+anchor_right = 0.632
+anchor_bottom = 0.407
+offset_left = -3.0517578e-05
+offset_top = 0.19200134
+offset_right = -0.06402588
+offset_bottom = -7.7359924
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 40
+text = "Made by"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text" type="RichTextLabel" parent="." unique_id=993917276]
+anchors_preset = -1
+anchor_left = 0.37500003
+anchor_top = 0.407
+anchor_right = 0.632
+anchor_bottom = 0.48100004
+offset_left = -3.0517578e-05
+offset_top = -0.73599243
+offset_right = -0.06402588
+offset_bottom = 5.8382874
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Pdezin"
+horizontal_alignment = 1
+
+[node name="credits_text3" type="RichTextLabel" parent="." unique_id=1190818642]
+anchors_preset = -1
+anchor_left = 0.698
+anchor_top = 0.22200002
+anchor_right = 0.94600004
+anchor_bottom = 0.29900002
+offset_left = -0.0960083
+offset_top = 0.14398193
+offset_right = -1.7919922
+offset_bottom = 0.24798584
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Audio & Music"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text4" type="RichTextLabel" parent="." unique_id=182762556]
+anchors_preset = -1
+anchor_left = 0.698
+anchor_top = 0.29900002
+anchor_right = 0.943
+anchor_bottom = 0.356
+offset_left = -0.0960083
+offset_top = 0.24798584
+offset_right = 1.6639404
+offset_bottom = 0.31199646
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Pixabay"
+horizontal_alignment = 1
+
+[node name="credits_text4" type="RichTextLabel" parent="." unique_id=1437303939]
+anchors_preset = -1
+anchor_left = 0.694
+anchor_top = 0.54300004
+anchor_right = 0.943
+anchor_bottom = 0.61700004
+offset_left = 0.5119629
+offset_top = 0.13598633
+offset_right = -6.3360596
+offset_bottom = 2.18396
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Textures"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text5" type="RichTextLabel" parent="." unique_id=1007217520]
+anchors_preset = -1
+anchor_left = 0.694
+anchor_top = 0.62
+anchor_right = 0.93900007
+anchor_bottom = 0.67700005
+offset_left = 0.5119629
+offset_top = 0.23999023
+offset_right = -1.7280273
+offset_bottom = 33.303955
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Ambientcg
+ChatGPT"
+horizontal_alignment = 1
+
+[node name="credits_text6" type="RichTextLabel" parent="." unique_id=213091030]
+anchors_preset = -1
+anchor_left = 0.38200003
+anchor_top = 0.58000004
+anchor_right = 0.625
+anchor_bottom = 0.65400004
+offset_left = -0.06402588
+offset_top = 0.15997314
+offset_bottom = 2.2079773
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Engine"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text7" type="RichTextLabel" parent="." unique_id=583397240]
+anchors_preset = -1
+anchor_left = 0.38200003
+anchor_top = 0.657
+anchor_right = 0.625
+anchor_bottom = 0.72800004
+offset_left = -0.06402588
+offset_top = 0.26400757
+offset_bottom = 0.25598145
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Godot 4.6.1"
+horizontal_alignment = 1
+
+[node name="credits_text2" type="RichTextLabel" parent="." unique_id=1539316479]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.22200002
+anchor_right = 0.29000002
+anchor_bottom = 0.296
+offset_left = -2.6880035
+offset_top = 0.14398193
+offset_right = -6.080017
+offset_bottom = 2.1920013
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Models"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text2" type="RichTextLabel" parent="." unique_id=936061446]
+anchors_preset = -1
+anchor_left = 0.042000003
+anchor_top = 0.30900002
+anchor_right = 0.286
+anchor_bottom = 0.356
+offset_left = -0.3840027
+offset_top = -7.23201
+offset_right = -1.4720154
+offset_bottom = 32.311996
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Pdezin
+Pixabay"
+horizontal_alignment = 1
+
+[node name="credits_text5" type="RichTextLabel" parent="." unique_id=539043538]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.54300004
+anchor_right = 0.29000002
+anchor_bottom = 0.61700004
+offset_left = -2.6880035
+offset_top = 0.13598633
+offset_right = -0.08001709
+offset_bottom = 2.18396
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Characters"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="credits_value_text6" type="RichTextLabel" parent="." unique_id=1422317928]
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.62
+anchor_right = 0.286
+anchor_bottom = 0.67700005
+offset_left = -2.6880035
+offset_top = 0.23999023
+offset_right = 6.5279846
+offset_bottom = 41.303955
+theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Tencent Hunyuan
+Mixamo (Animations)"
+horizontal_alignment = 1
