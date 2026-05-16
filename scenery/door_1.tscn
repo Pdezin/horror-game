@@ -159,6 +159,8 @@ script = ExtResource("1_rfhy4")
 mesh = SubResource("ArrayMesh_tfs8x")
 
 [node name="door" type="StaticBody3D" parent="door_frame" unique_id=1551182446]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door_frame/door" unique_id=1067691905]
 shape = SubResource("ConvexPolygonShape3D_31rvt")
@@ -184,6 +186,8 @@ material_override = SubResource("StandardMaterial3D_31rvt")
 mesh = SubResource("BoxMesh_31rvt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame1" unique_id=581497808]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame1/StaticBody3D" unique_id=1998829469]
 shape = SubResource("BoxShape3D_rfhy4")
@@ -194,6 +198,8 @@ material_override = SubResource("StandardMaterial3D_31rvt")
 mesh = SubResource("BoxMesh_31rvt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame2" unique_id=773415524]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame2/StaticBody3D" unique_id=943753851]
 shape = SubResource("BoxShape3D_rfhy4")
@@ -204,6 +210,8 @@ material_override = SubResource("StandardMaterial3D_31rvt")
 mesh = SubResource("BoxMesh_31rvt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame3" unique_id=421462596]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame3/StaticBody3D" unique_id=1551498521]
 shape = SubResource("BoxShape3D_rfhy4")

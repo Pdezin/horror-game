@@ -8,7 +8,6 @@ var opened = false
 func _physics_process(delta: float) -> void:
 	if !opened and !locked and has_enemy_in_area():
 		toogle_door(true)
-		$door_frame/door/CollisionShape3D.disabled = true
 	
 func interact(interact_label):
 	if has_enemy_in_area():
@@ -46,7 +45,7 @@ func ai_open_door(body):
 		toogle_door(false)
 		
 func ai_close_door(body):
-	$door_frame/door/CollisionShape3D.disabled = false
+	pass
 	#if body != null and opened == true and body.name == "enemy":
 		#toogle_door()
 		

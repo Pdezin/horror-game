@@ -62,11 +62,11 @@ anchors_preset = -1
 anchor_left = 0.37500003
 anchor_top = 0.407
 anchor_right = 0.632
-anchor_bottom = 0.48100004
+anchor_bottom = 0.49400002
 offset_left = -3.0517578e-05
 offset_top = -0.73599243
 offset_right = -0.06402588
-offset_bottom = 5.8382874
+offset_bottom = -2.5856934
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Pdezin"
@@ -123,12 +123,12 @@ vertical_alignment = 2
 anchors_preset = -1
 anchor_left = 0.694
 anchor_top = 0.62
-anchor_right = 0.93900007
-anchor_bottom = 0.67700005
+anchor_right = 0.93700004
+anchor_bottom = 0.72800004
 offset_left = 0.5119629
 offset_top = 0.23999023
-offset_right = -1.7280273
-offset_bottom = 33.303955
+offset_right = 0.57592773
+offset_bottom = 0.25598145
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Ambientcg
@@ -183,17 +183,19 @@ vertical_alignment = 2
 [node name="credits_value_text2" type="RichTextLabel" parent="." unique_id=936061446]
 anchors_preset = -1
 anchor_left = 0.042000003
-anchor_top = 0.30900002
-anchor_right = 0.286
-anchor_bottom = 0.356
+anchor_top = 0.298
+anchor_right = 0.28500003
+anchor_bottom = 0.44400004
 offset_left = -0.3840027
-offset_top = -7.23201
-offset_right = -1.4720154
-offset_bottom = 32.311996
+offset_top = -0.104003906
+offset_right = -0.32003784
+offset_bottom = 0.28796387
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Pdezin
-Pixabay"
+Pixabay
+Quaternius_CC0
+"
 horizontal_alignment = 1
 
 [node name="credits_text5" type="RichTextLabel" parent="." unique_id=539043538]
@@ -216,12 +218,12 @@ vertical_alignment = 2
 anchors_preset = -1
 anchor_left = 0.044000003
 anchor_top = 0.62
-anchor_right = 0.286
-anchor_bottom = 0.67700005
+anchor_right = 0.29200003
+anchor_bottom = 0.74100006
 offset_left = -2.6880035
 offset_top = 0.23999023
-offset_right = 6.5279846
-offset_bottom = 41.303955
+offset_right = -0.3840332
+offset_bottom = -0.16802979
 theme_override_colors/default_color = Color(0.6822916, 0.6822916, 0.6822916, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Tencent Hunyuan

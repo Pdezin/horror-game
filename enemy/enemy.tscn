@@ -38,22 +38,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99860644, 0)
 [node name="chasecast" type="RayCast3D" parent="chasecasts" unique_id=272463562]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
 target_position = Vector3(0, -10, 0)
+collision_mask = 3
 
 [node name="chasecast2" type="RayCast3D" parent="chasecasts" unique_id=1306429497]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
 target_position = Vector3(5, -10, 0)
+collision_mask = 3
 
 [node name="chasecast3" type="RayCast3D" parent="chasecasts" unique_id=259994872]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
 target_position = Vector3(-5, -10, 0)
+collision_mask = 3
 
 [node name="chasecast4" type="RayCast3D" parent="chasecasts" unique_id=813723182]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
 target_position = Vector3(-2.5, -10, 0)
+collision_mask = 3
 
 [node name="chasecast5" type="RayCast3D" parent="chasecasts" unique_id=538022737]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.34478444, -0.54132116)
 target_position = Vector3(2.5, -10, 0)
+collision_mask = 3
 
 [node name="killcast" type="Node3D" parent="." unique_id=475672132]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42057043, -0.5144063)

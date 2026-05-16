@@ -216,6 +216,8 @@ script = ExtResource("1_ucfw3")
 mesh = SubResource("ArrayMesh_5o63q")
 
 [node name="door" type="StaticBody3D" parent="door_frame" unique_id=1180200974]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door_frame/door" unique_id=57642393]
 shape = SubResource("ConvexPolygonShape3D_amfrh")
@@ -241,6 +243,8 @@ material_override = SubResource("StandardMaterial3D_amfrh")
 mesh = SubResource("BoxMesh_ucfw3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame1" unique_id=958302099]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame1/StaticBody3D" unique_id=1217503370]
 shape = SubResource("BoxShape3D_awdll")
@@ -251,6 +255,8 @@ material_override = SubResource("StandardMaterial3D_amfrh")
 mesh = SubResource("BoxMesh_ucfw3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame2" unique_id=569572343]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame2/StaticBody3D" unique_id=540776936]
 shape = SubResource("BoxShape3D_awdll")
@@ -261,6 +267,8 @@ material_override = SubResource("StandardMaterial3D_amfrh")
 mesh = SubResource("BoxMesh_ucfw3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="frames/frame3" unique_id=725722270]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frames/frame3/StaticBody3D" unique_id=1058071834]
 shape = SubResource("BoxShape3D_awdll")

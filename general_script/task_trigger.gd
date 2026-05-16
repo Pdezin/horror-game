@@ -8,4 +8,4 @@ func enter_trigger(body):
 	if body != null and body.name == "player" and !triggered:
 		triggered = true
 		ui.set_task(task_text)
-		get_tree().current_scene.get_node("enemy").spawn_enemy()
+		#get_tree().current_scene.get_node("enemy").spawn_enemy()

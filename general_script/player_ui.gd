@@ -6,7 +6,7 @@ func _ready() -> void:
 	hide_menus()
 	initialize_interacted_ui()
 	initialize_tasks()
-		
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pause_game()
@@ -40,7 +40,12 @@ func close_interacted_ui():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 #SAFE UI
-@onready var safe = get_tree().current_scene.get_node("house/NavigationRegion3D/basement/safe")
+@onready var safe = takeBasementSafe()
+
+func takeBasementSafe():
+	if get_tree().current_scene.has_node("house/NavigationRegion3D/basement/safe"):
+		return get_tree().current_scene.get_node("house/NavigationRegion3D/basement/safe")
+	return null
 
 func initialize_safe():
 	$interactive_ui/safe_ui.visible = false

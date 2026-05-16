@@ -87,3 +87,9 @@ func isPlayerOnGrass() -> bool:
 			return true
 			
 	return false
+
+func hide_for_cutscene():
+	process_mode = Node.PROCESS_MODE_DISABLED
+	visible = false
+	$player_ui/player_ui.visible = false
+	$player_ui/task_ui.visible = false

@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://do8r08fcg3rg5"]
 
-[ext_resource type="Script" uid="uid://dn2dg7qiyerxl" path="res://general_script/generic_open.gd" id="1_ugbsu"]
+[ext_resource type="Script" uid="uid://5far5r8hyhul" path="res://general_script/chest.gd" id="1_q6xv4"]
 [ext_resource type="AudioStream" uid="uid://bvq6l1gmu15qi" path="res://sounds/chest_open.mp3" id="2_q6xv4"]
 [ext_resource type="AudioStream" uid="uid://cgnpn0p4a5qnr" path="res://sounds/chest_close.mp3" id="3_o26hn"]
+[ext_resource type="AudioStream" uid="uid://cktif88is48ao" path="res://sounds/unlock.mp3" id="4_o26hn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qfy5"]
 resource_name = "Wood.001"
@@ -195,7 +196,7 @@ _data = {
 }
 
 [node name="chest" type="Node3D" unique_id=228885281]
-script = ExtResource("1_ugbsu")
+script = ExtResource("1_q6xv4")
 
 [node name="ChestBottom" type="MeshInstance3D" parent="." unique_id=304093380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04826665, 0.6216849, 1.4368114)
@@ -229,5 +230,11 @@ bus = &"SFX"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028128713, 0.97868276, 1.4213085)
 stream = ExtResource("3_o26hn")
 pitch_scale = 2.0
+max_distance = 20.0
+bus = &"SFX"
+
+[node name="unlock" type="AudioStreamPlayer3D" parent="." unique_id=1169549943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009160608, 0.9640852, 1.4261323)
+stream = ExtResource("4_o26hn")
 max_distance = 20.0
 bus = &"SFX"

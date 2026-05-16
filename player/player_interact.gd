@@ -19,6 +19,8 @@ func _physics_process(_delta: float) -> void:
 			hit.get_parent().get_parent().interact(interact_label)
 		elif "hatch" in hit.name:
 			hit.get_parent().interact(interact_label)
+		elif "chest_key" in hit.name:
+			hit.interact(interact_label, take_audio)
 		elif "key" in hit.name:
 			hit.interact(interact_label, take_audio)
 		elif "powerbox" in hit.name:
@@ -40,3 +42,11 @@ func _physics_process(_delta: float) -> void:
 				interact_label.visible = true
 		elif "car" == hit.name:
 			hit.get_parent().get_parent().interact(interact_label)
+		elif "wood_log" == hit.name:
+			hit.get_parent().get_parent().interact(interact_label)
+		elif "wheel" == hit.name:
+			hit.get_parent().interact(interact_label, take_audio)
+		elif "shovel" == hit.name:
+			hit.get_parent().get_parent().interact(interact_label, take_audio)
+		elif "install_wheel" == hit.name:
+			hit.get_parent().interact_install_wheel(interact_label)

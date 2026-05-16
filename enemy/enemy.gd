@@ -5,6 +5,7 @@ const RUN_SPEED = 2.5
 
 @export var patrol_destinations: Node3D
 @export var growl_audios: Array[AudioStream]
+@export var chase_music: AudioStreamPlayer
 
 @onready var player = get_tree().current_scene.get_node("player")
 @onready var rng = RandomNumberGenerator.new()
@@ -35,6 +36,7 @@ func _process(delta: float) -> void:
 			chase_timer = 0
 			chasing = false
 			$killcast/killcast.enabled = false
+			stop_chase_music()
 			pick_destination()
 	
 	if idle or player_killed:
@@ -91,6 +93,7 @@ func despawn_enemy():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	chasing = false
+	stop_chase_music()
 
 func pick_destination():
 	if player_killed:
@@ -106,9 +109,10 @@ func pick_destination():
 			num = destination_value - 1
 		else:
 			num = destination_value + 1
-			
+		
 	destination = destinations[num]
 	destination_value = num
+	print("Enemy destination:" + str(num))
 	active_enemy()
 
 func update_target_location():
@@ -131,6 +135,7 @@ func chase_player():
 		stop_chasing = false
 		chase_timer = 0
 		chasing = true
+		play_chase_music()
 		destination = player
 		active_enemy()
 	else:
@@ -152,11 +157,13 @@ func kill_player():
 		var hit = $killcast/killcast.get_collider()
 		if hit != null and player_killed == false and hit.name == "player":
 			player_killed = true
+			stop_chasing = false
+			chase_timer = 0
+			chasing = false
 			stop_growl()
+			stop_chase_music()
 			speed = 0
-			player.visible = false
-			player.get_node("player_ui").queue_free()
-			player.process_mode = Node.PROCESS_MODE_DISABLED
+			player.hide_for_cutscene()
 			$monster_enemy/jumpscare_cam.current = true
 			$monster_enemy/AnimationPlayer.play("jumpscare")
 			await get_tree().create_timer(4.5, false).timeout
@@ -228,3 +235,11 @@ func growl():
 func stop_growl():
 	if $growl.playing:
 		$growl.stop()
+		
+func play_chase_music():
+	if !chase_music.playing:
+		chase_music.play()
+	
+func stop_chase_music():
+	if chase_music.playing:
+		chase_music.stop()

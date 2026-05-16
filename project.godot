@@ -10,14 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Horror Game"
+config/name="The Castro Incident"
 run/main_scene="uid://dbgosrwqn8wsv"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ittfp28kekpc"
 
 [autoload]
 
 Global="*uid://bt6ccv3ed7u7u"
+AudioManager="*uid://dr1cv3npwqfbv"
 
 [display]
 

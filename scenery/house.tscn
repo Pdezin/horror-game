@@ -23,7 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://weohhwrgk8j3" path="res://scenery/stove.tscn" id="13_quocs"]
 [ext_resource type="PackedScene" uid="uid://mlhcqrp6sdd6" path="res://scenery/fridge.tscn" id="14_14o1x"]
 [ext_resource type="PackedScene" uid="uid://d40n6qcblnvp" path="res://scenery/bookcase.tscn" id="15_gudfl"]
+[ext_resource type="PackedScene" uid="uid://b2lkhk0v8u466" path="res://scenery/wheel.tscn" id="16_68n2k"]
 [ext_resource type="PackedScene" uid="uid://bwoywxgdp8p4f" path="res://glb_models/quaternius_cc0-cooking-pot-861.glb" id="16_bl3am"]
+[ext_resource type="PackedScene" uid="uid://cntsks7ue5pq1" path="res://scenery/shovel.tscn" id="17_bt8gv"]
 [ext_resource type="PackedScene" uid="uid://bahdo1h8x5y2q" path="res://scenery/trash.tscn" id="17_egufs"]
 [ext_resource type="PackedScene" uid="uid://ccsmgec5ntr28" path="res://scenery/carpet.tscn" id="18_0clsk"]
 [ext_resource type="PackedScene" uid="uid://qr7chlpngmjn" path="res://scenery/plate.tscn" id="18_s3afc"]
@@ -354,8 +356,14 @@ transform = Transform3D(0.10216062, 0, -2.4979117, 0, 2.5, 0, 2.4979117, 0, 0.10
 [node name="chest4" parent="NavigationRegion3D/basement/chests" unique_id=435317036 instance=ExtResource("43_yrxfy")]
 transform = Transform3D(-0.5295062, 0, -2.443282, 0, 2.4999998, 0, 2.443282, 0, -0.5295062, -7.9594445, -15.257522, 5.804501)
 
+[node name="whell" parent="NavigationRegion3D/basement/chests/chest4" unique_id=402481343 instance=ExtResource("16_68n2k")]
+transform = Transform3D(0.008992226, -0.0043571386, -0.00039415318, 0.004260272, 0.008925855, -0.0014762094, 0.0009950212, 0.0011595206, 0.009882597, 0.03780508, 0.41685438, 1.4262319)
+
 [node name="chest3" parent="NavigationRegion3D/basement/chests" unique_id=403588662 instance=ExtResource("43_yrxfy")]
 transform = Transform3D(-1.1369199, 0, -2.2265248, 0, 2.5, 0, 2.2265248, 0, -1.1369199, 20.802155, -15.257522, 3.977364)
+
+[node name="shovel" parent="NavigationRegion3D/basement/chests/chest3" unique_id=24630463 instance=ExtResource("17_bt8gv")]
+transform = Transform3D(-0.292442, -0.06372539, 0.02040732, -0.03175349, 0.21270205, 0.2091634, -0.058898956, 0.20173414, -0.21408862, 0.03370738, 0.33289337, 1.5169768)
 
 [node name="washing_machine" parent="NavigationRegion3D/basement" unique_id=1103825339 instance=ExtResource("44_w78tr")]
 transform = Transform3D(-9.616505e-08, 0, 2.2, 0, 2.2, 0, -2.2, 0, -9.616505e-08, -18.458698, -15.282387, -9.207942)
