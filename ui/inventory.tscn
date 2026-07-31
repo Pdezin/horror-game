@@ -1,0 +1,397 @@
+[gd_scene format=3 uid="uid://dptcxb1g3fjkr"]
+
+[node name="inventory" type="Control" unique_id=1071077986]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left" type="Control" parent="." unique_id=1894942598]
+layout_mode = 1
+anchor_left = 0.039
+anchor_top = 0.597
+anchor_right = 0.039
+anchor_bottom = 0.597
+offset_left = -44.928
+offset_top = -184.85599
+offset_right = 176.07199
+offset_bottom = 174.14401
+grow_vertical = 2
+
+[node name="item1" type="ColorRect" parent="left" unique_id=1438112780]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_right = 0.749
+anchor_bottom = 0.30600002
+offset_left = 0.028995514
+offset_right = -0.029006958
+offset_bottom = 0.14598846
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="left/item1" unique_id=448464892]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="left/item1" unique_id=1487503542]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="left/item1" unique_id=1015994606]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1
+
+[node name="item2" type="ColorRect" parent="left" unique_id=969714546]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.347
+anchor_right = 0.749
+anchor_bottom = 0.65300006
+offset_left = 0.028995514
+offset_top = -0.07299805
+offset_right = -0.029006958
+offset_bottom = 0.07298279
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="left/item2" unique_id=1730816182]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="left/item2" unique_id=712827714]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="left/item2" unique_id=1629877008]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1
+
+[node name="item3" type="ColorRect" parent="left" unique_id=519398275]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.694
+anchor_right = 0.749
+anchor_bottom = 1.0
+offset_left = 0.028995514
+offset_top = -0.1459961
+offset_right = -0.029006958
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="left/item3" unique_id=885475317]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="left/item3" unique_id=1150180283]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="left/item3" unique_id=1747636718]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1
+
+[node name="right" type="Control" parent="." unique_id=1274787637]
+layout_mode = 1
+anchor_left = 0.961
+anchor_top = 0.58900005
+anchor_right = 0.961
+anchor_bottom = 0.58900005
+offset_left = -176.07202
+offset_top = -179.67203
+offset_right = 44.92798
+offset_bottom = 179.32797
+grow_vertical = 2
+
+[node name="item4" type="ColorRect" parent="right" unique_id=339104359]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_right = 0.749
+anchor_bottom = 0.30600002
+offset_left = 0.028995514
+offset_right = -0.029006958
+offset_bottom = 0.14598846
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="right/item4" unique_id=800301720]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="right/item4" unique_id=1477564838]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="right/item4" unique_id=447562573]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1
+
+[node name="item5" type="ColorRect" parent="right" unique_id=241925923]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.347
+anchor_right = 0.749
+anchor_bottom = 0.65300006
+offset_left = 0.028995514
+offset_top = -0.07299805
+offset_right = -0.029006958
+offset_bottom = 0.07298279
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="right/item5" unique_id=397518061]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="right/item5" unique_id=103668763]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="right/item5" unique_id=1222667821]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1
+
+[node name="item6" type="ColorRect" parent="right" unique_id=2142609901]
+visible = false
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.694
+anchor_right = 0.749
+anchor_bottom = 1.0
+offset_left = 0.028995514
+offset_top = -0.1459961
+offset_right = -0.029006958
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="right/item6" unique_id=1401705825]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065000005
+anchor_top = 0.065000005
+anchor_right = 0.93500006
+anchor_bottom = 0.93500006
+offset_left = 45.0225
+offset_top = 45.0225
+offset_right = -45.022507
+offset_bottom = -45.022507
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="count" type="RichTextLabel" parent="right/item6" unique_id=136531563]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.63600004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039993286
+offset_top = 0.039993286
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="RichTextLabel" parent="right/item6" unique_id=1052339386]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.545
+offset_bottom = 0.049999237
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+horizontal_alignment = 1

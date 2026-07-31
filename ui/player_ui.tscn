@@ -2,13 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://leyf5fr2gor6" path="res://textures/crosshair.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://d4dl7ut5wyn2y" path="res://general_script/player_ui.gd" id="1_ehg4m"]
+[ext_resource type="Texture2D" uid="uid://dfsplplcy70ki" path="res://textures/flashlight_item.jpg" id="2_5p2iw"]
+[ext_resource type="PackedScene" uid="uid://dptcxb1g3fjkr" path="res://ui/inventory.tscn" id="3_1wie7"]
 [ext_resource type="PackedScene" uid="uid://xm26eacg42ei" path="res://ui/pause_menu.tscn" id="3_iwa1g"]
+[ext_resource type="Texture2D" uid="uid://cankows6ilvba" path="res://textures/shovel_item.jpg" id="3_k3t1i"]
 [ext_resource type="PackedScene" uid="uid://d15gpx4vdn5tq" path="res://ui/task_ui.tscn" id="3_lp0io"]
+[ext_resource type="Texture2D" uid="uid://b024g3prgpooa" path="res://textures/wheel_item.jpg" id="4_8om82"]
+[ext_resource type="Texture2D" uid="uid://de7ywarmo7cvn" path="res://textures/basement_key_item.jpg" id="5_j0e15"]
 [ext_resource type="PackedScene" uid="uid://dha20d7dosp32" path="res://ui/safe_ui.tscn" id="5_lp0io"]
+[ext_resource type="Texture2D" uid="uid://djru203wgdwlm" path="res://textures/shotgun_item.jpg" id="6_8om82"]
 [ext_resource type="PackedScene" uid="uid://icwfayugwrbk" path="res://ui/settings.tscn" id="6_g1ro4"]
 [ext_resource type="PackedScene" uid="uid://i8dsx42db3vk" path="res://ui/cutscene_transition_ui.tscn" id="6_ykvpg"]
 [ext_resource type="PackedScene" uid="uid://ccosaedxpx87m" path="res://ui/controls.tscn" id="7_b6i2q"]
 [ext_resource type="AudioStream" uid="uid://bx4dxq53kv0n5" path="res://sounds/button_click.mp3" id="7_f7sc3"]
+[ext_resource type="Texture2D" uid="uid://c50yogmoqcyj4" path="res://textures/chest_key_item.jpg" id="7_j0e15"]
 [ext_resource type="AudioStream" uid="uid://csr7pbe66s6d2" path="res://sounds/button_hover.mp3" id="8_g1ro4"]
 
 [node name="player_ui" type="Control" unique_id=718627395]
@@ -20,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ehg4m")
+items_icons = Array[CompressedTexture2D]([ExtResource("2_5p2iw"), ExtResource("3_k3t1i"), ExtResource("4_8om82"), ExtResource("5_j0e15"), ExtResource("6_8om82"), ExtResource("7_j0e15")])
 
 [node name="player_ui" type="CanvasLayer" parent="." unique_id=165448078]
 
@@ -51,6 +59,8 @@ grow_vertical = 0
 [node name="Label" type="Label" parent="player_ui/interact_text" unique_id=327132286]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
+
+[node name="inventory" parent="player_ui" unique_id=1071077986 instance=ExtResource("3_1wie7")]
 
 [node name="task_ui" parent="." unique_id=1212747872 instance=ExtResource("3_lp0io")]
 

@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://8euc4bgk4gqx"]
 
 [ext_resource type="Script" uid="uid://cqvyigkriej78" path="res://general_script/wood_log.gd" id="1_6ulbv"]
+[ext_resource type="AudioStream" uid="uid://yafh8k8m5lmu" path="res://sounds/old_tree.mp3" id="2_a00iq"]
+[ext_resource type="AudioStream" uid="uid://c3h7iepbhxvkx" path="res://sounds/ground_impact.mp3" id="3_iegk2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71e0o"]
 resource_name = "Wood"
@@ -109,3 +111,19 @@ mesh = SubResource("ArrayMesh_acc8a")
 [node name="wood_log" type="CollisionShape3D" parent="wood_log/wood_log" unique_id=876677002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49090958, -0.16213226)
 shape = SubResource("BoxShape3D_htcgk")
+
+[node name="old_wood" type="AudioStreamPlayer3D" parent="." unique_id=1068642882]
+transform = Transform3D(-0.97498673, 0, -0.22226316, 0, 1, 0, 0.22226316, 0, -0.97498673, -0.062030315, 1.1014397, -0.40149203)
+stream = ExtResource("2_a00iq")
+volume_db = 10.0
+unit_size = 20.0
+max_distance = 30.0
+bus = &"SFX"
+
+[node name="ground_hit" type="AudioStreamPlayer3D" parent="." unique_id=1857438857]
+transform = Transform3D(-0.97498673, 0, -0.22226316, 0, 1, 0, 0.22226316, 0, -0.97498673, 0.07730234, 1.1014397, -0.2954129)
+stream = ExtResource("3_iegk2")
+volume_db = 10.0
+unit_size = 20.0
+max_distance = 30.0
+bus = &"SFX"

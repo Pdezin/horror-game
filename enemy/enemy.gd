@@ -18,6 +18,7 @@ var chase_timer = 0.0
 var destination
 var destination_value
 var player_killed = false
+var player_hiding = false
 
 func _ready() -> void:
 	$monster_enemy/AnimationPlayer.play("idle")
@@ -29,7 +30,15 @@ func _process(delta: float) -> void:
 	if chasing:
 		if !$killcast/killcast.enabled:
 			$killcast/killcast.enabled = true
-		if chase_timer < 10.0:
+		if player_hiding:
+			stop_chasing = false
+			chase_timer = 0
+			chasing = false
+			$killcast/killcast.enabled = false
+			pick_destination()
+			await get_tree().create_timer(3.0, false).timeout
+			stop_chase_music()
+		elif chase_timer < 10.0:
 			chase_timer += 1 * delta
 		elif stop_chasing:
 			stop_chasing = false
@@ -76,7 +85,7 @@ func _physics_process(delta: float) -> void:
 		footsteps()
 	else:
 		stop_footsteps()
-		
+
 func compute_velocity(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity, 0.25)
 	move_and_slide()
@@ -123,13 +132,7 @@ func chase_player():
 	if player_killed:
 		return
 		
-	var playerFound = false
-		
-	for chasecast: RayCast3D in $chasecasts.get_children():
-		if chasecast != null and chasecast.is_colliding():
-			var hit = chasecast.get_collider()
-			if hit.name == "player":
-				playerFound = true
+	var playerFound = is_looking_at_player()
 	
 	if playerFound and !player_killed:
 		stop_chasing = false
@@ -140,6 +143,17 @@ func chase_player():
 		active_enemy()
 	else:
 		stop_chasing = true
+
+func is_looking_at_player():
+	var playerFound = false
+		
+	for chasecast: RayCast3D in $chasecasts.get_children():
+		if chasecast != null and chasecast.is_colliding():
+			var hit = chasecast.get_collider()
+			if hit.name == "player":
+				playerFound = true
+				
+	return playerFound
 
 func stop_enemy():
 	idle = true

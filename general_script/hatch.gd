@@ -13,6 +13,7 @@ func open_hatch():
 		
 	opened = true
 	Global.isBasementOpened = true
+	Global.hasBasementKey = false
 	$AnimationPlayer.play("open")
 	$open.play()
 	await get_tree().create_timer(2.0, false).timeout

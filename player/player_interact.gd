@@ -29,8 +29,6 @@ func _physics_process(_delta: float) -> void:
 			hit.get_parent().get_parent().interact_powerswitch(interact_label)
 		elif "drawer" in hit.name:
 			hit.get_parent().get_parent().interact(interact_label)
-		elif "closet" in hit.name:
-			hit.get_parent().interact(interact_label)
 		elif "bookcase" in hit.name:
 			hit.get_parent().interact(interact_label)
 		elif "chest" in hit.name:
@@ -50,3 +48,9 @@ func _physics_process(_delta: float) -> void:
 			hit.get_parent().get_parent().interact(interact_label, take_audio)
 		elif "install_wheel" == hit.name:
 			hit.get_parent().interact_install_wheel(interact_label)
+		elif "enter_closet" == hit.name:
+			hit.get_parent().interact_enter(interact_label)
+		elif "exit_closet" == hit.name:
+			hit.get_parent().interact_exit(interact_label)
+		elif "dig" == hit.name:
+			hit.interact(interact_label)

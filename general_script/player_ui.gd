@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pause_game()
+	update_inventory()
 
 func hide_menus():
 	$pause_menu.visible = false
@@ -17,6 +18,130 @@ func hide_menus():
 	$controls.visible = false
 	$player_ui.visible = true
 	$confirmation.visible = false
+
+#INVENTORY
+var inventory: Array[String] = []
+@export var items_icons: Array[CompressedTexture2D]
+
+var hasFlashlight = false
+var hasShovel = false
+var hasWheel = false
+var hasBasementKey = false
+var hasShootgun = false
+var chest_keys = 0
+
+func update_inventory():
+	var hasChange = false
+	
+	if Global.hasFlashlight != hasFlashlight:
+		if inventory.has("flashlight"):
+			hasFlashlight = false
+			inventory.erase("flashlight")
+		else:
+			hasFlashlight = true
+			inventory.append("flashlight")
+		hasChange = true
+
+	if Global.hasShovel != hasShovel:
+		if inventory.has("shovel"):
+			hasShovel = false
+			inventory.erase("shovel")
+		else:
+			hasShovel = true
+			inventory.append("shovel")
+		hasChange = true
+
+	if Global.hasWheel != hasWheel:
+		if inventory.has("wheel"):
+			hasWheel = false
+			inventory.erase("wheel")
+		else:
+			hasWheel = true
+			inventory.append("wheel")
+		hasChange = true
+
+	if Global.hasBasementKey != hasBasementKey:
+		if inventory.has("basement key"):
+			hasBasementKey = false
+			inventory.erase("basement key")
+		else:
+			hasBasementKey = true
+			inventory.append("basement key")
+		hasChange = true
+
+	if Global.hasShootgun != hasShootgun:
+		if inventory.has("shootgun"):
+			hasShootgun = false
+			inventory.erase("shootgun")
+		else:
+			hasShootgun = true
+			inventory.append("shootgun")
+		hasChange = true
+
+	if Global.chest_keys != chest_keys:
+		hasChange = true
+		chest_keys = Global.chest_keys
+		if inventory.has("chest keys"):
+			if chest_keys == 0:
+				inventory.erase("chest keys")
+		else:
+			inventory.append("chest keys")
+
+	if !hasChange:
+		return
+
+	var left_items: Control = $player_ui/inventory/left
+	var right_items: Control = $player_ui/inventory/right
+	
+	var total = inventory.size()
+	var count = 0
+
+	for item in left_items.get_children():
+		count += 1
+		item.visible = count <= total
+		if item.visible:
+			var name = inventory[count - 1]
+			item.get_node("TextureRect").texture = return_item_icon(name)
+			item.get_node("name").visible = true
+			item.get_node("name").text = name
+			var item_count = return_item_count(name)
+			item.get_node("count").visible = item_count > 0
+			item.get_node("count").text = str(item_count)
+		
+	for item in right_items.get_children():
+		count += 1
+		item.visible = count <= total
+		if item.visible:
+			var name = inventory[count - 1]
+			item.get_node("TextureRect").texture = return_item_icon(name)
+			item.get_node("name").visible = true
+			item.get_node("name").text = name
+			var item_count = return_item_count(name)
+			item.get_node("count").visible = item_count > 0
+			item.get_node("count").text = str(item_count)
+
+func return_item_icon(name):
+	var index = 0
+	if name == "flashlight":
+		index = 0
+	if name == "shovel":
+		index = 1
+	if name == "wheel":
+		index = 2
+	if name == "basement key":
+		index = 3
+	if name == "shootgun":
+		index = 4
+	if name == "chest keys":
+		index = 5
+	
+	return items_icons[index]
+
+func return_item_count(name):
+	if name == "chest keys":
+		return Global.chest_keys
+		
+	return 0
 
 #TASKS
 func initialize_tasks():

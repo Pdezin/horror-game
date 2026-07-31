@@ -3,11 +3,16 @@ extends CharacterBody3D
 var SPEED = 3.5
 const JUMP_VELOCITY = 4.5
 var crouching = false
+var disable_movement = false
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("crouch"):
+	if disable_movement:
+		force_stop_footsteps()
+		crouching = false
+	
+	if Input.is_action_just_pressed("crouch") and !disable_movement:
 		crouching = !crouching
-		stop_footsteps_crouching()
+		force_stop_footsteps()
 		
 	if crouching and SPEED != 1.5:
 		SPEED = 1.5
@@ -28,13 +33,16 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if disable_movement:
+		return
 		
 	# Handle jump.
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# As good practice, you should replace UI actions with custom gameplay actions.	
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -46,7 +54,7 @@ func _physics_process(delta: float) -> void:
 		stop_footsteps()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()
 
 func footsteps():
@@ -76,9 +84,11 @@ func stop_footsteps():
 		if $feet/footsteps.playing and $feet/footsteps.get_playback_position() > 0.5:
 			$feet/footsteps.stop()
 
-func stop_footsteps_crouching():
-	$feet/footsteps.stop()
-	$feet/grass_footsteps.stop()
+func force_stop_footsteps():
+	if $feet/footsteps.playing:
+		$feet/footsteps.stop()
+	if $feet/grass_footsteps.playing:
+		$feet/grass_footsteps.stop()
 
 func isPlayerOnGrass() -> bool:
 	if $feet/RayCast3D.is_colliding():
@@ -93,3 +103,9 @@ func hide_for_cutscene():
 	visible = false
 	$player_ui/player_ui.visible = false
 	$player_ui/task_ui.visible = false
+	
+func show_end_cutscene():
+	process_mode = Node.PROCESS_MODE_INHERIT
+	visible = true
+	$player_ui/player_ui.visible = true
+	$player_ui/task_ui.visible = true

@@ -8,5 +8,5 @@ func interact(interact_label, take_audio):
 		pickup()
 
 func pickup():
-	Global.hasWheel = true
+	Global.hasShovel = true
 	queue_free()

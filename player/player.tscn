@@ -32,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.796954, 0)
 script = ExtResource("2_rkbax")
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1030111096]
+current = true
 script = ExtResource("3_qjkh3")
 
 [node name="RayCast3D" type="RayCast3D" parent="head/Camera3D" unique_id=787269907 node_paths=PackedStringArray("take_audio", "playerUI")]

@@ -14,8 +14,14 @@ const unlock_text = 'Press "E" to unlock'
 const pickup_text = 'Press "E" to pick up'
 const install_wheel_text = 'Press "E" to place the wheel'
 const escape_text = 'Press "E" to escape'
+const hide_text = 'Press "E" to hide'
+const exit_text = 'Press "E" to exit'
+const dig_text = 'Press "E" to start digging'
+const closet_cant_open = "You can't, the creature is too close"
 
 var powerOn = false
+var hasFlashlight = true
+var hasShootgun = false
 var hasWheel = false
 var hasShovel = false
 var hasBasementKey = false
@@ -26,6 +32,8 @@ var chest_keys = 0
 
 func reseat_game():
 	powerOn = false
+	hasFlashlight = true
+	hasShootgun = false
 	hasWheel = false
 	hasShovel = false
 	hasBasementKey = false

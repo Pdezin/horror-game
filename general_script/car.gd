@@ -56,10 +56,11 @@ func interact_install_wheel(interact_label):
 	isBusy = false
 
 func install_wheel():
+	Global.hasWheel = false
 	$install_wheel/install_wheel.disabled = true
 	$sounds/wrench_tool.play()
 	
-	get_tree().current_scene.get_node("player/player_ui/cutscene_transition_ui/AnimationPlayer").play("fadein")
+	get_tree().current_scene.get_node("player/player_ui/cutscene_transition_ui/AnimationPlayer").play("fadein_perma")
 	await get_tree().create_timer(1.0, false).timeout
 	
 	$SUV_FrontLeftWheel.visible = true
