@@ -21,7 +21,7 @@ const closet_cant_open = "You can't, the creature is too close"
 
 var powerOn = false
 var hasFlashlight = true
-var hasShootgun = false
+var hasShotgun = false
 var hasWheel = false
 var hasShovel = false
 var hasBasementKey = false
@@ -33,7 +33,7 @@ var chest_keys = 0
 func reseat_game():
 	powerOn = false
 	hasFlashlight = true
-	hasShootgun = false
+	hasShotgun = false
 	hasWheel = false
 	hasShovel = false
 	hasBasementKey = false

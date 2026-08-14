@@ -19,6 +19,11 @@ func _process(delta: float) -> void:
 		
 	if !crouching and SPEED != 3.5:
 		SPEED = 3.5
+		
+	if Global.hasShotgun:
+		$head/Camera3D/shotgun.visible = true
+	else:
+		$head/Camera3D/shotgun.visible = false
 	
 func _physics_process(delta: float) -> void:
 	# Crouching
@@ -103,9 +108,11 @@ func hide_for_cutscene():
 	visible = false
 	$player_ui/player_ui.visible = false
 	$player_ui/task_ui.visible = false
+	$head/Camera3D/shotgun.visible = false
 	
 func show_end_cutscene():
 	process_mode = Node.PROCESS_MODE_INHERIT
 	visible = true
 	$player_ui/player_ui.visible = true
 	$player_ui/task_ui.visible = true
+	$head/Camera3D/shotgun.visible = Global.hasShotgun

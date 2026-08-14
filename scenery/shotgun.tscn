@@ -1,5 +1,10 @@
 [gd_scene format=4 uid="uid://cy5020iocayf7"]
 
+[ext_resource type="Script" uid="uid://dkhwc0fckve14" path="res://general_script/shotgun.gd" id="1_p8kvt"]
+[ext_resource type="AudioStream" uid="uid://cdiqm3wfecjrk" path="res://sounds/shot_fire.mp3" id="2_uec0n"]
+[ext_resource type="AudioStream" uid="uid://b7y0n2h3ewo5j" path="res://sounds/reload.mp3" id="3_1s862"]
+[ext_resource type="Texture2D" uid="uid://sdxqko1g024t" path="res://textures/smoke.png" id="4_1s862"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svlhx"]
 resource_name = "Wood"
 cull_mode = 2
@@ -124,7 +129,133 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3wdce")
 
-[node name="shotgun" type="Node3D" unique_id=1876569809]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8kvt"]
+size = Vector3(5.855072, 1, 0.46362305)
 
-[node name="Shotgun_3" type="MeshInstance3D" parent="." unique_id=136551496]
+[sub_resource type="Animation" id="Animation_1s862"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uec0n"]
+resource_name = "shot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.6, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.17453292), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1s862"]
+_data = {
+&"RESET": SubResource("Animation_1s862"),
+&"shot": SubResource("Animation_uec0n")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1s862"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_1s862")
+emission_enabled = true
+emission = Color(1, 0.72983825, 0.20110208, 1)
+emission_energy_multiplier = 20.0
+billboard_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_jagkg"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hc2tw"]
+gradient = SubResource("Gradient_jagkg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_btar8"]
+lifetime_randomness = 0.63
+emission_shape_scale = Vector3(0.4, 0.2, 0.4)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.1, 1)
+gravity = Vector3(0, 2, 0)
+color_ramp = SubResource("GradientTexture1D_hc2tw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ymkbm"]
+
+[node name="shotgun" type="Node3D" unique_id=1876569809]
+script = ExtResource("1_p8kvt")
+
+[node name="shotgun" type="MeshInstance3D" parent="." unique_id=136551496]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_dbxa5")
+
+[node name="shotgun" type="StaticBody3D" parent="shotgun" unique_id=1177714380]
+
+[node name="shotgun" type="CollisionShape3D" parent="shotgun/shotgun" unique_id=1788972138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4154147, 0, -0.022338867)
+shape = SubResource("BoxShape3D_p8kvt")
+
+[node name="shot" type="AudioStreamPlayer" parent="." unique_id=986329337]
+stream = ExtResource("2_uec0n")
+bus = &"SFX"
+
+[node name="reload" type="AudioStreamPlayer" parent="." unique_id=2013442926]
+stream = ExtResource("3_1s862")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1535747903]
+libraries/ = SubResource("AnimationLibrary_1s862")
+
+[node name="fire" type="Node3D" parent="." unique_id=1675738054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8471646, 0.314718, 0)
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="fire" unique_id=677661589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16738689, 0)
+light_color = Color(1, 0.85087407, 0.3331502, 1)
+shadow_enabled = true
+omni_range = 6.37622
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="fire" unique_id=1647226292]
+transform = Transform3D(0.32557732, 0, 0, 0, 0.6413403, 0, 0, 0, 0.41447714, 0, -0.1290378, 0)
+material_override = SubResource("StandardMaterial3D_1s862")
+amount = 1
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_btar8")
+draw_pass_1 = SubResource("QuadMesh_ymkbm")

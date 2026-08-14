@@ -46,6 +46,8 @@ func _physics_process(_delta: float) -> void:
 			hit.get_parent().interact(interact_label, take_audio)
 		elif "shovel" == hit.name:
 			hit.get_parent().get_parent().interact(interact_label, take_audio)
+		elif "shotgun" == hit.name:
+			hit.get_parent().get_parent().interact(interact_label, take_audio)
 		elif "install_wheel" == hit.name:
 			hit.get_parent().interact_install_wheel(interact_label)
 		elif "enter_closet" == hit.name:

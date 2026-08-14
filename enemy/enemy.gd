@@ -19,6 +19,9 @@ var destination
 var destination_value
 var player_killed = false
 var player_hiding = false
+var health := 6.0
+var dead = false
+var being_hiting = false
 
 func _ready() -> void:
 	$monster_enemy/AnimationPlayer.play("idle")
@@ -48,7 +51,7 @@ func _process(delta: float) -> void:
 			stop_chase_music()
 			pick_destination()
 	
-	if idle or player_killed:
+	if idle or dead or being_hiting:
 		if speed != 0:
 			speed = 0
 	elif chasing:
@@ -64,8 +67,8 @@ func _process(delta: float) -> void:
 	update_target_location()
 
 func _physics_process(delta: float) -> void:
-	#chase control
 	
+	#chase control
 	chase_player()
 	kill_player()
 	#fall control
@@ -105,7 +108,7 @@ func despawn_enemy():
 	stop_chase_music()
 
 func pick_destination():
-	if player_killed:
+	if player_killed or dead or being_hiting:
 		return
 	
 	if chasing:
@@ -129,20 +132,23 @@ func update_target_location():
 		$NavigationAgent3D.target_position = destination.global_transform.origin
 	
 func chase_player():
-	if player_killed:
+	if player_killed or dead or being_hiting:
 		return
 		
 	var playerFound = is_looking_at_player()
 	
 	if playerFound and !player_killed:
-		stop_chasing = false
-		chase_timer = 0
-		chasing = true
-		play_chase_music()
-		destination = player
-		active_enemy()
+		init_chase()
 	else:
 		stop_chasing = true
+
+func init_chase():
+	stop_chasing = false
+	chase_timer = 0
+	chasing = true
+	play_chase_music()
+	destination = player
+	active_enemy()
 
 func is_looking_at_player():
 	var playerFound = false
@@ -166,6 +172,9 @@ func active_enemy():
 	$monster_enemy/AnimationPlayer.play("walking")
 	
 func kill_player():
+	if dead or being_hiting:
+		return
+	
 	$killcast/killcast.look_at(player.global_transform.origin)
 	if $killcast/killcast.is_colliding():
 		var hit = $killcast/killcast.get_collider()
@@ -234,7 +243,7 @@ func _on_timer_timeout():
 	$Timer.wait_time = randf_range(3.0, 10.0)
 
 func growl():
-	if player_killed:
+	if player_killed or dead or being_hiting:
 		stop_growl()
 		return
 	
@@ -257,3 +266,56 @@ func play_chase_music():
 func stop_chase_music():
 	if chase_music.playing:
 		chase_music.stop()
+		
+func take_damage(amount):
+	if dead:
+		return
+		
+	health -= amount
+	speed = 0
+	stop_footsteps()
+	stop_growl()
+	
+	if health <= 0:
+		dying()
+	else:
+		hit()
+		
+func dying():
+	dead = true
+	chasing = false
+	$growl.play()
+	$monster_enemy/AnimationPlayer.play("dying")
+	$killcast/killcast.enabled = false
+	$CollisionShape3D.disabled = true
+	stop_chase_music()
+	
+func hit():
+	look_at_player()
+	
+	being_hiting = true
+	
+	$monster_enemy/AnimationPlayer.play_backwards("dying")
+	
+	look_at_player()
+	
+	$monster_enemy/AnimationPlayer.seek(0.8)
+	await get_tree().create_timer(0.7).timeout
+	$monster_enemy/AnimationPlayer.stop()
+	
+	look_at_player()
+	
+	being_hiting = false
+	init_chase()
+	
+func look_at_player():
+	var direction = player.global_position - global_position
+	direction.y = 0
+	
+	var look_dir = lerp_angle(
+		deg_to_rad(global_rotation_degrees.y),
+		atan2(-direction.x, -direction.z),
+		0.5
+	)
+
+	global_rotation_degrees.y = rad_to_deg(look_dir)

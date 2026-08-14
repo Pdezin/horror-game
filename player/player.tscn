@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://de3k3xwg136kb" path="res://sounds/footsteps.mp3" id="6_g6k8r"]
 [ext_resource type="AudioStream" uid="uid://k2hoguao5gvq" path="res://sounds/grass_footsteps.mp3" id="7_boad6"]
 [ext_resource type="AudioStream" uid="uid://cas1u2r7pqnts" path="res://sounds/take.mp3" id="8_rgyib"]
+[ext_resource type="PackedScene" uid="uid://cy5020iocayf7" path="res://scenery/shotgun.tscn" id="9_hg6s5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -42,6 +43,15 @@ collision_mask = 3
 script = ExtResource("3_g1dw6")
 take_audio = NodePath("../../../take")
 playerUI = NodePath("../../../player_ui")
+
+[node name="shotgun_RayCast3D" type="RayCast3D" parent="head/Camera3D" unique_id=1483557227]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -7, 0)
+collision_mask = 3
+
+[node name="shotgun" parent="head/Camera3D" unique_id=1876569809 node_paths=PackedStringArray("raycast") instance=ExtResource("9_hg6s5")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0.4682541, -0.30863893, -0.3337152)
+raycast = NodePath("../shotgun_RayCast3D")
 
 [node name="player_ui" parent="." unique_id=718627395 instance=ExtResource("4_yw30f")]
 

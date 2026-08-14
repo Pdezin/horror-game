@@ -1,14 +1,14 @@
+OmniLight3D
+AnimationPlayer
 CollisionShape3D
 StaticBody3D
+RayCast3D
 Node3D
 Node
-OmniLight3D
 MeshInstance3D
 Camera3D
-AnimationPlayer
 RichTextLabel
 TextureRect
 ColorRect
 Control
 WorldEnvironment
-RigidBody3D

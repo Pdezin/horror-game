@@ -1,4 +1,4 @@
-res://scenery/backyard.tscn
+res://scenery/shotgun.tscn
 res://environment/nighttime.tres
 res://materials/house_material.tres
 res://materials/wall_material.tres
@@ -12,11 +12,13 @@ res://materials/wood2_material.tres
 res://materials/carpet_material.tres
 res://materials/gold_material.tres
 res://materials/dirt_material.tres
+res://player/player_interact.gd
+res://general_script/shotgun.gd
 res://levels/level.tscn
-res://general_script/dig.gd
-res://scenery/shovel.tscn
-res://scenery/car.tscn
-res://ui/cutscene_transition_ui.tscn
-res://general_script/car.gd
-res://scenery/wood_log.tscn
-res://general_script/wood_log.gd
+res://general_script/player_ui.gd
+res://player/player.tscn
+res://player/player.gd
+res://enemy/enemy.tscn
+res://enemy/enemy.gd
+res://enemy/monster_enemy.tscn
+res://ui/controls.tscn

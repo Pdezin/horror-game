@@ -69,7 +69,7 @@ func update_inventory():
 			inventory.append("basement key")
 		hasChange = true
 
-	if Global.hasShootgun != hasShootgun:
+	if Global.hasShotgun != hasShootgun:
 		if inventory.has("shootgun"):
 			hasShootgun = false
 			inventory.erase("shootgun")

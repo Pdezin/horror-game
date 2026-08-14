@@ -42,6 +42,7 @@ text = "[AWSD] Movement
 [CTRL] Crouch
 [E] Interact
 [F] Flashlight
+[M1] Fire_weapon
 [M2] Zoom
 [ESC] Pause"
 horizontal_alignment = 3
