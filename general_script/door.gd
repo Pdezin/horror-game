@@ -2,6 +2,7 @@ extends Node3D
 
 @export var custom_material: StandardMaterial3D
 @export var locked = false
+@export var puzzle: Node3D
 
 var opened = false
 
@@ -35,6 +36,8 @@ func toogle_door(fastAnimation: bool):
 			$AnimationPlayer.play_backwards("open")
 	if opened:
 		$door_frame/open.play()
+		if puzzle != null:
+			puzzle.puzzle_completed = true
 		if fastAnimation:
 			$AnimationPlayer.play("open_fast")
 		else:

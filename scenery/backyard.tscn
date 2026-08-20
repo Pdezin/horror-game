@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c1kk00e7f7gch" path="res://textures/grass_normal.jpg" id="2_mdemj"]
 [ext_resource type="Material" uid="uid://c5s8f3a50jv2e" path="res://materials/dirt_material.tres" id="3_mdemj"]
 [ext_resource type="PackedScene" uid="uid://cntsks7ue5pq1" path="res://scenery/shovel.tscn" id="4_xc58g"]
+[ext_resource type="PackedScene" uid="uid://do8r08fcg3rg5" path="res://scenery/chest.tscn" id="5_35wgb"]
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="6_5a6sb"]
+[ext_resource type="PackedScene" uid="uid://cy5020iocayf7" path="res://scenery/shotgun.tscn" id="7_0r5co"]
+[ext_resource type="PackedScene" uid="uid://xhq6i81qql18" path="res://scenery/ammos.tscn" id="8_wg0ym"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xc58g"]
 albedo_texture = ExtResource("1_k3ikb")
@@ -129,7 +133,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qw7n5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdemj"]
-size = Vector3(2, 3.7113953, 2)
+size = Vector3(1.8369141, 3.7113953, 1.7751465)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnrwf"]
 size = Vector3(0.40445974, 1.9471157, 0.092358455)
@@ -164,13 +168,15 @@ material_override = ExtResource("3_mdemj")
 mesh = SubResource("ArrayMesh_6xibf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="hole" unique_id=1079190090]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hole/StaticBody3D" unique_id=1936556723]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7964017, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08760142, 2.7964013, 0.10880566)
 shape = SubResource("BoxShape3D_mdemj")
 
 [node name="shovel" parent="." unique_id=24630463 instance=ExtResource("4_xc58g")]
-transform = Transform3D(1.8166262, 0.03792221, -2.3871386, 0.17678893, 2.9892495, 0.18202475, 2.3808854, -0.25089687, 1.8078816, 15.617302, 14.7126875, 25.495369)
+transform = Transform3D(1.6349636, 0.03413001, -2.1484249, 0.15911004, 2.6903245, 0.1638223, 2.1427968, -0.2258072, 1.6270936, 15.617302, 14.7126875, 25.495369)
 
 [node name="shovel" parent="shovel/Shovel/shovel" parent_id_path=PackedInt32Array(24630463, 706935343) index="0" unique_id=2121436538]
 disabled = true
@@ -178,5 +184,18 @@ disabled = true
 [node name="shovel2" type="CollisionShape3D" parent="shovel/Shovel/shovel" parent_id_path=PackedInt32Array(24630463, 706935343) index="1" unique_id=1931072198]
 shape = SubResource("BoxShape3D_gnrwf")
 disabled = true
+
+[node name="chest" parent="." unique_id=228885281 instance=ExtResource("5_35wgb")]
+transform = Transform3D(-12, 0, -1.8119497e-06, 0, 12, 0, 1.8119497e-06, 0, -12, 9.613424, -2.9929595, 58.184155)
+locked = false
+enabled = false
+custom_material = ExtResource("6_5a6sb")
+
+[node name="shotgun" parent="." unique_id=1876569809 node_paths=PackedStringArray("ammo") instance=ExtResource("7_0r5co")]
+transform = Transform3D(-8.7422784e-08, 2.0000002, -8.742278e-08, 0, -8.7422784e-08, -2, -2.0000002, -8.7422784e-08, 3.821371e-15, 9.143002, 3.9836426, 43.674015)
+ammo = NodePath("../ammos")
+
+[node name="ammos" parent="." unique_id=51358181 instance=ExtResource("8_wg0ym")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.939205, 4.253637, 37.17421)
 
 [editable path="shovel"]

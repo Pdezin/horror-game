@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 const WALK_SPEED = 2.0
-const RUN_SPEED = 2.5
+const RUN_SPEED = 2.6
+const BEING_HIT_SPEED = 0.2
 
 @export var patrol_destinations: Node3D
 @export var growl_audios: Array[AudioStream]
@@ -51,9 +52,12 @@ func _process(delta: float) -> void:
 			stop_chase_music()
 			pick_destination()
 	
-	if idle or dead or being_hiting:
+	if idle or dead:
 		if speed != 0:
 			speed = 0
+	elif being_hiting:
+		if speed != BEING_HIT_SPEED:
+			speed = BEING_HIT_SPEED
 	elif chasing:
 		if speed != RUN_SPEED:
 			speed = RUN_SPEED
@@ -84,11 +88,11 @@ func _physics_process(delta: float) -> void:
 	#velocity = velocity.move_toward(new_velocity, 0.25)
 	#move_and_slide()
 	
-	if speed > 0:
-		footsteps()
-	else:
+	if speed <= 0 or player_killed or dead or being_hiting:
 		stop_footsteps()
-
+	else:
+		footsteps()
+		
 func compute_velocity(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity, 0.25)
 	move_and_slide()
@@ -108,7 +112,7 @@ func despawn_enemy():
 	stop_chase_music()
 
 func pick_destination():
-	if player_killed or dead or being_hiting:
+	if player_killed or dead:
 		return
 	
 	if chasing:
@@ -168,11 +172,11 @@ func stop_enemy():
 
 func active_enemy():
 	idle = false
-	speed = WALK_SPEED
+	speed = WALK_SPEED 
 	$monster_enemy/AnimationPlayer.play("walking")
 	
 func kill_player():
-	if dead or being_hiting:
+	if dead or being_hiting or $monster_enemy/AnimationPlayer.current_animation == "dying": 
 		return
 	
 	$killcast/killcast.look_at(player.global_transform.origin)
@@ -185,6 +189,8 @@ func kill_player():
 			chasing = false
 			stop_growl()
 			stop_chase_music()
+			$feet/footsteps.stop()
+			$feet/grass_footsteps.stop()
 			speed = 0
 			player.hide_for_cutscene()
 			$monster_enemy/jumpscare_cam.current = true
@@ -268,11 +274,10 @@ func stop_chase_music():
 		chase_music.stop()
 		
 func take_damage(amount):
-	if dead:
+	if dead or player_killed:
 		return
-		
+	
 	health -= amount
-	speed = 0
 	stop_footsteps()
 	stop_growl()
 	
@@ -282,6 +287,7 @@ func take_damage(amount):
 		hit()
 		
 func dying():
+	speed = 0
 	dead = true
 	chasing = false
 	$growl.play()
@@ -291,9 +297,9 @@ func dying():
 	stop_chase_music()
 	
 func hit():
-	look_at_player()
-	
 	being_hiting = true
+	
+	look_at_player()
 	
 	$monster_enemy/AnimationPlayer.play_backwards("dying")
 	
@@ -309,13 +315,13 @@ func hit():
 	init_chase()
 	
 func look_at_player():
-	var direction = player.global_position - global_position
-	direction.y = 0
+	speed = BEING_HIT_SPEED
+	destination = player
 	
-	var look_dir = lerp_angle(
-		deg_to_rad(global_rotation_degrees.y),
-		atan2(-direction.x, -direction.z),
-		0.5
-	)
+	#var look_dir = lerp_angle(
+		#deg_to_rad(global_rotation_degrees.y),
+		#atan2(-direction.x, -direction.z),
+		#0.5
+	#)
 
-	global_rotation_degrees.y = rad_to_deg(look_dir)
+	#global_rotation_degrees.y = rad_to_deg(look_dir)

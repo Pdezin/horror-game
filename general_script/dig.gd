@@ -43,6 +43,8 @@ func dig():
 	
 	old_backyard.visible = false
 	new_backyard.visible = true
+	new_backyard.get_node("chest").enabled = true
+	new_backyard.get_node("shotgun").pickeable = true
 	
 	dig_sound.stop()
 	get_tree().current_scene.get_node("player/player_ui/cutscene_transition_ui/AnimationPlayer").play("fadeout")

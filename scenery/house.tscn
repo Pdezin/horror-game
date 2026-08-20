@@ -199,10 +199,6 @@ transform = Transform3D(1.7530446, 0, 0, 0, 1.3834732, 0, 0, 0, 1.4, -15.580188,
 transform = Transform3D(-1.7530446, 0, 1.2239188e-07, 0, 1.3834732, 0, -1.5325602e-07, 0, -1.4, -11.643096, -4.7648315, -5.066106)
 custom_material = SubResource("StandardMaterial3D_fhqxt")
 
-[node name="door_basement" parent="doors" unique_id=1619307614 instance=ExtResource("67_x1123")]
-transform = Transform3D(-7.662801e-08, 0, 1.4, 0, 1.3834732, 0, -1.7530446, 0, -6.119594e-08, 6.1303864, -15.3434, -4.3315735)
-custom_material = ExtResource("58_itapk")
-
 [node name="door_basement2" parent="doors" unique_id=1772352184 instance=ExtResource("67_x1123")]
 transform = Transform3D(-7.662801e-08, 0, 1.4, 0, 1.3834732, 0, -1.7530446, 0, -6.119594e-08, 6.1303864, -15.3434, 8.830248)
 custom_material = ExtResource("58_itapk")

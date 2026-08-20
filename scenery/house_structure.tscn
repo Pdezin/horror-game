@@ -7,8 +7,6 @@
 [ext_resource type="Material" uid="uid://c6wyu1mvwwmr4" path="res://materials/roof_material.tres" id="4_vn3fe"]
 [ext_resource type="PackedScene" uid="uid://burddc58eqhxi" path="res://scenery/window.tscn" id="6_w5fig"]
 [ext_resource type="Material" uid="uid://ds0yu2k1f5w8x" path="res://materials/stone_material.tres" id="8_57uhp"]
-[ext_resource type="PackedScene" uid="uid://cauhh2hj5xwv" path="res://scenery/light_bulb.tscn" id="13_vqaou"]
-[ext_resource type="PackedScene" uid="uid://bd05mpvcxyxky" path="res://scenery/light_switch.tscn" id="14_vqaou"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vas2m"]
 resource_name = "Material"
@@ -365,70 +363,3 @@ mesh = SubResource("CylinderMesh_vn3fe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pillars/pillar2/StaticBody3D" unique_id=828389367]
 shape = SubResource("ConvexPolygonShape3D_57uhp")
-
-[node name="lights" type="Node3D" parent="." unique_id=229381891]
-
-[node name="light_bulb" parent="lights" unique_id=1732632362 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 14.507433, 4.169424, 7.2355824)
-
-[node name="light_bulb2" parent="lights" unique_id=1722083988 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 12.719706, 4.169424, -7.400232)
-
-[node name="light_bulb3" parent="lights" unique_id=1988361619 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.5815086, 4.169424, -2.5626054)
-
-[node name="light_bulb4" parent="lights" unique_id=340702965 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.6628089, 4.169424, 6.5088162)
-
-[node name="light_bulb5" parent="lights" unique_id=1269136628 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -13.40688, 4.169424, 6.5088162)
-
-[node name="light_bulb6" parent="lights" unique_id=305331880 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12.202301, 4.169424, -9.840981)
-
-[node name="light_bulb7" parent="lights" unique_id=64850876 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.7074895, -5.8916264, 2.557402)
-
-[node name="light_bulb8" parent="lights" unique_id=1611123866 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 12.763712, -5.8916264, 7.479534)
-
-[node name="light_bulb9" parent="lights" unique_id=749925329 instance=ExtResource("13_vqaou")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 13.071397, -5.8916264, -8.130946)
-
-[node name="light_switches" type="Node3D" parent="." unique_id=1479238739]
-
-[node name="light_switch" parent="light_switches" unique_id=1477890185 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 14.078968, -1.43924, -13.8089)
-light_bulb = NodePath("../../lights/light_bulb2")
-
-[node name="light_switch2" parent="light_switches" unique_id=12257286 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 8.766907, -1.43924, 1.1256918)
-light_bulb = NodePath("../../lights/light_bulb")
-
-[node name="light_switch3" parent="light_switches" unique_id=1934333796 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.306076, -1.43924, 0.34099674)
-light_bulb = NodePath("../../lights/light_bulb4")
-
-[node name="light_switch6" parent="light_switches" unique_id=991244895 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -14.257644, -1.43924, 0.34099674)
-light_bulb = NodePath("../../lights/light_bulb5")
-
-[node name="light_switch4" parent="light_switches" unique_id=1741526305 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -7.7094684, -1.43924, -0.4150536)
-light_bulb = NodePath("../../lights/light_bulb3")
-
-[node name="light_switch5" parent="light_switches" unique_id=1962181856 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -12.567595, -1.43924, -5.296818)
-light_bulb = NodePath("../../lights/light_bulb6")
-
-[node name="light_switch7" parent="light_switches" unique_id=77481335 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 6.548026, -11.9223995, -5.720662)
-light_bulb = NodePath("../../lights/light_bulb9")
-
-[node name="light_switch9" parent="light_switches" unique_id=90225599 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -10.041762, -11.9223995, -13.802466)
-light_bulb = NodePath("../../lights/light_bulb7")
-
-[node name="light_switch8" parent="light_switches" unique_id=89462442 node_paths=PackedStringArray("light_bulb") instance=ExtResource("14_vqaou")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 6.548026, -11.9223995, 7.3262796)
-light_bulb = NodePath("../../lights/light_bulb8")

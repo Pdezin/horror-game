@@ -27,7 +27,7 @@ var hasFlashlight = false
 var hasShovel = false
 var hasWheel = false
 var hasBasementKey = false
-var hasShootgun = false
+var hasShotgun = false
 var chest_keys = 0
 
 func update_inventory():
@@ -69,13 +69,13 @@ func update_inventory():
 			inventory.append("basement key")
 		hasChange = true
 
-	if Global.hasShotgun != hasShootgun:
-		if inventory.has("shootgun"):
-			hasShootgun = false
-			inventory.erase("shootgun")
+	if Global.hasShotgun != hasShotgun:
+		if inventory.has("shotgun"):
+			hasShotgun = false
+			inventory.erase("shotgun")
 		else:
-			hasShootgun = true
-			inventory.append("shootgun")
+			hasShotgun = true
+			inventory.append("shotgun")
 		hasChange = true
 
 	if Global.chest_keys != chest_keys:
@@ -130,7 +130,7 @@ func return_item_icon(name):
 		index = 2
 	if name == "basement key":
 		index = 3
-	if name == "shootgun":
+	if name == "shotgun":
 		index = 4
 	if name == "chest keys":
 		index = 5

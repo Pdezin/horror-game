@@ -6,15 +6,17 @@ extends Node3D
 @export var light_bulb: Node3D
 
 func _ready() -> void:
-	if !on:
-		light_bulb.get_node("light").material_override = off_mat
+	if on and Global.powerOn:
+		set_on()
+	else:
+		set_off()
+	
+func _process(_delta: float) -> void:
 	if on:
-		light_bulb.get_node("light").material_override = on_mat
-	
-	light_bulb.get_node("OmniLight3D").visible = on
-	
-	$on.visible = on
-	$off.visible = !on
+		if Global.powerOn:
+			set_on()
+		else:
+			set_off()
 
 func interact(interact_label):
 	if Global.powerOn == true:
@@ -27,14 +29,19 @@ func interact(interact_label):
 		
 func toggle_light():
 	on = !on
-	
 	if on:
-		$on.visible = true
-		$off.visible = false
-		light_bulb.get_node("light").material_override = on_mat
+		set_on()
 	if !on:
-		$on.visible = false
-		$off.visible = true
-		light_bulb.get_node("light").material_override = off_mat
+		set_off()
 		
-	light_bulb.get_node("OmniLight3D").visible = on
+func set_on():
+	$on.visible = true
+	$off.visible = false
+	light_bulb.get_node("light").material_override = on_mat
+	light_bulb.get_node("OmniLight3D").visible = true
+	
+func set_off():
+	$on.visible = false
+	$off.visible = true
+	light_bulb.get_node("light").material_override = off_mat
+	light_bulb.get_node("OmniLight3D").visible = false

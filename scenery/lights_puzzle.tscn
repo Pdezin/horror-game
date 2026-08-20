@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://dnh0ac3jgbtd7"]
+
+[ext_resource type="Script" uid="uid://bpxni3yk0istu" path="res://general_script/lights_puzzle.gd" id="1_bt0q0"]
+[ext_resource type="Texture2D" uid="uid://cj8wh2qkh4gg3" path="res://textures/puzzle_1.png" id="1_lvphr"]
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="3_pxkl1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bt0q0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxkl1"]
+albedo_color = Color(1, 0, 0.008800983, 1)
+roughness = 0.1
+emission_enabled = true
+emission = Color(1, 0.004798591, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaqsw"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ofgj8"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r3hbw"]
+resource_name = "safe_Cube_004"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_oaqsw"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ofgj8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kbvn"]
+albedo_color = Color(0.123636246, 1, 0, 1)
+roughness = 0.1
+emission_enabled = true
+emission = Color(0.09334278, 1, 0, 1)
+emission_energy_multiplier = 3.0
+
+[node name="lights_puzzle" type="Node3D" unique_id=2113098511]
+script = ExtResource("1_bt0q0")
+
+[node name="image" type="Decal" parent="." unique_id=548076439]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+size = Vector3(1.0503845, 0.022949219, 0.9467468)
+texture_albedo = ExtResource("1_lvphr")
+modulate = Color(0.7090317, 0.7852908, 1, 1)
+
+[node name="panel_locked" type="MeshInstance3D" parent="." unique_id=245430104]
+transform = Transform3D(0.20577231, 0, 0, 0, 0.19927514, 0, 0, 0, 0.042893216, -0.7535008, 0.2944856, 0)
+material_override = ExtResource("3_pxkl1")
+mesh = SubResource("BoxMesh_bt0q0")
+
+[node name="led" type="MeshInstance3D" parent="panel_locked" unique_id=323724221]
+transform = Transform3D(9.122698e-11, 0, -0.3326831, 0, 0.2432575, 0, 0.0076501383, 0, 3.967209e-09, -0.001790762, 0.17550051, 0.49474448)
+material_override = SubResource("StandardMaterial3D_pxkl1")
+mesh = SubResource("ArrayMesh_r3hbw")
+
+[node name="panel_unlocked" type="MeshInstance3D" parent="." unique_id=2020538605]
+transform = Transform3D(0.20577231, 0, 0, 0, 0.19927514, 0, 0, 0, 0.042893216, -0.7535008, 0.2944856, 0)
+visible = false
+material_override = ExtResource("3_pxkl1")
+mesh = SubResource("BoxMesh_bt0q0")
+
+[node name="led" type="MeshInstance3D" parent="panel_unlocked" unique_id=551345632]
+transform = Transform3D(9.122698e-11, 0, -0.3326831, 0, 0.2432575, 0, 0.0076501383, 0, 3.967209e-09, -0.001790762, 0.17550051, 0.49474448)
+material_override = SubResource("StandardMaterial3D_1kbvn")
+mesh = SubResource("ArrayMesh_r3hbw")

@@ -1,5 +1,7 @@
 extends Node3D
 
+var climbing = false
+
 func interact(interact_label):
 	interact_label.text = Global.climb_text
 	if Input.is_action_just_pressed("interact"):
@@ -9,6 +11,11 @@ func interact(interact_label):
 
 
 func climb():
+	if climbing:
+		return
+		
+	climbing = true
+	
 	get_tree().current_scene.get_node("player/player_ui/cutscene_transition_ui/AnimationPlayer").play("fadein_perma")
 	await get_tree().create_timer(0.4, false).timeout
 	
@@ -28,3 +35,5 @@ func climb():
 		
 	get_tree().current_scene.get_node("player/player_ui/cutscene_transition_ui/AnimationPlayer").play("fadeout")
 	await get_tree().create_timer(0.4, false).timeout
+	
+	climbing = false

@@ -3,6 +3,7 @@ extends Node3D
 var damage: float = 1.0
 var fire_delay: float = 1.0
 @export var pickeable: bool = false
+@export var ammo: Node3D
 
 @export var raycast: RayCast3D
 
@@ -20,12 +21,16 @@ func interact(interact_label, take_audio):
 
 func pickup():
 	Global.hasShotgun = true
+	if ammo != null:
+		ammo.visible = false
 	queue_free()
 
 func _process(_delta):
 	if not pickeable:
 		$shotgun/shotgun/shotgun.disabled = true
-	
+	else:
+		$shotgun/shotgun/shotgun.disabled = false
+		
 	if pickeable:
 		return
 		

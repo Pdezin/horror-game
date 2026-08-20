@@ -1,9 +1,26 @@
 extends Node3D
 
+@export var locked = true
+@export var enabled = true;
+@export var custom_material: StandardMaterial3D
 var opened = false
-var locked = true
 var isBusy = false
 
+func _ready() -> void:
+	if custom_material != null:
+		$ChestBottom.material_override = custom_material
+		$ChestTop.material_override = custom_material
+		$cover.visible = true
+
+func _process(_delta):
+	if not enabled:
+		$ChestBottom/chest/CollisionShape3D.disabled = true
+		$ChestTop/chest/CollisionShape3D.disabled = true
+	else:
+		$ChestBottom/chest/CollisionShape3D.disabled = false
+		$ChestTop/chest/CollisionShape3D.disabled = false
+		
+		
 func toogle_open():
 	if $AnimationPlayer.current_animation == "open":
 		return

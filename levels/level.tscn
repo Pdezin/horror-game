@@ -50,7 +50,12 @@
 [ext_resource type="PackedScene" uid="uid://dqc5lfrn4ryut" path="res://scenery/rock_2.tscn" id="45_jsxi6"]
 [ext_resource type="PackedScene" uid="uid://8euc4bgk4gqx" path="res://scenery/wood_log.tscn" id="46_foglu"]
 [ext_resource type="AudioStream" uid="uid://b5hcrmbf15fku" path="res://sounds/ending_music.mp3" id="47_h81eb"]
-[ext_resource type="PackedScene" uid="uid://cy5020iocayf7" path="res://scenery/shotgun.tscn" id="51_v7c81"]
+[ext_resource type="PackedScene" uid="uid://cntsks7ue5pq1" path="res://scenery/shovel.tscn" id="51_v7c81"]
+[ext_resource type="PackedScene" uid="uid://cauhh2hj5xwv" path="res://scenery/light_bulb.tscn" id="52_p2c42"]
+[ext_resource type="PackedScene" uid="uid://bd05mpvcxyxky" path="res://scenery/light_switch.tscn" id="53_ip64a"]
+[ext_resource type="PackedScene" uid="uid://dnh0ac3jgbtd7" path="res://scenery/lights_puzzle.tscn" id="54_ip64a"]
+[ext_resource type="PackedScene" uid="uid://c5vadcjbcolcs" path="res://scenery/door_1_inverted.tscn" id="55_svrlv"]
+[ext_resource type="Material" uid="uid://ce5gkeffpy1w8" path="res://materials/metal_material.tres" id="56_vpu38"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qucvi"]
 size = Vector3(2.3197632, 0.9269409, 1.2105255)
@@ -258,10 +263,10 @@ unit_size = 50.0
 bus = &"SFX"
 
 [node name="player" parent="." unique_id=53842522 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(0.99953145, 0, -0.030608393, 0, 1, 0, 0.030608393, 0, 0.99953145, -1.1126139, 0.36354733, 51.365234)
+transform = Transform3D(0.99953145, 0, -0.030608393, 0, 1, 0, 0.030608393, 0, 0.99953145, -1.1126139, 0.36354733, 52.124855)
 
 [node name="enemy" parent="." unique_id=896111546 node_paths=PackedStringArray("patrol_destinations", "chase_music") instance=ExtResource("4_pm7mp")]
-transform = Transform3D(0.92690897, 0, -0.37528622, 0, 1, 0, 0.37528622, 0, 0.92690897, 2.2049403, 0.4009359, 6.2031426)
+transform = Transform3D(0.92690897, 0, -0.37528622, 0, 1, 0, 0.37528622, 0, 0.92690897, 2.207171, 0.4009354, 6.1973314)
 patrol_destinations = NodePath("../enemy_destinations")
 chase_music = NodePath("../chase_music")
 
@@ -1039,6 +1044,9 @@ transform = Transform3D(-1.8861443, 0, 1.6408716, 0, 2.4999995, 0, -1.6408716, 0
 [node name="tree10" parent="NavigationRegion3D/garden/trees" unique_id=980245224 instance=ExtResource("17_80cyg")]
 transform = Transform3D(-1.7982583, 0, -1.7367404, 0, 2.4999998, 0, 1.7367404, 0, -1.7982583, -19.00358, 0.4241748, 48.9443)
 
+[node name="tree12" parent="NavigationRegion3D/garden/trees" unique_id=1432130032 instance=ExtResource("17_80cyg")]
+transform = Transform3D(-1.7982583, 0, -1.7367404, 0, 2.4999998, 0, 1.7367404, 0, -1.7982583, -6.31557, 0.4241748, 47.67786)
+
 [node name="tree2" parent="NavigationRegion3D/garden/trees" unique_id=712584605 instance=ExtResource("18_mca5t")]
 transform = Transform3D(1.9282007, 0, 1.5912391, 0, 2.5, 0, -1.5912391, 0, 1.9282007, -7.076592, 0.35822582, 1.9274554)
 
@@ -1056,6 +1064,9 @@ transform = Transform3D(-1.5784836, 0, 1.9386568, 0, 2.5000002, 0, -1.9386568, 0
 
 [node name="tree8" parent="NavigationRegion3D/garden/trees" unique_id=990718204 instance=ExtResource("18_mca5t")]
 transform = Transform3D(-1.5784836, 0, 1.9386568, 0, 2.5000002, 0, -1.9386568, 0, -1.5784836, 13.488138, 0.35822582, 45.47348)
+
+[node name="tree11" parent="NavigationRegion3D/garden/trees" unique_id=1457956551 instance=ExtResource("18_mca5t")]
+transform = Transform3D(-1.5784836, 0, 1.9386568, 0, 2.5000002, 0, -1.9386568, 0, -1.5784836, 5.705385, 0.35822582, 45.47348)
 
 [node name="bench" parent="NavigationRegion3D/garden" unique_id=1363685359 instance=ExtResource("19_axqo2")]
 transform = Transform3D(0.3055004, 0, 0.25820443, 0, 0.4, 0, -0.25820443, 0, 0.3055004, 1.340136, 0.9164698, 2.847295)
@@ -1582,10 +1593,16 @@ transform = Transform3D(-1.4926385, 0, -2.3286877, 0, 2.766, 0, 2.3286877, 0, -1
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.6746435, 0.4458477, 36.173874)
 
 [node name="bush27" parent="trail/bush" unique_id=1178146625 instance=ExtResource("15_80cyg")]
-transform = Transform3D(-0.5759566, 0, 1.8106006, 0, 1.8999997, 0, -1.8106006, 0, -0.5759566, 3.431723, 0.25644445, 46.038357)
+transform = Transform3D(-0.5759566, 0, 1.8106006, 0, 1.8999997, 0, -1.8106006, 0, -0.5759566, 3.431723, 0.25644445, 46.483444)
+
+[node name="bush36" parent="trail/bush" unique_id=66391482 instance=ExtResource("15_80cyg")]
+transform = Transform3D(-1.0696585, 0, 1.570297, 0, 1.8999997, 0, -1.570297, 0, -1.0696585, 1.5477597, 0.25644445, 46.46684)
 
 [node name="bush30" parent="trail/bush" unique_id=1146307548 instance=ExtResource("15_80cyg")]
 transform = Transform3D(0.9468897, 0, 2.598876, 0, 2.766, 0, -2.598876, 0, 0.9468897, 2.5656033, 0.34259748, 48.8646)
+
+[node name="bush37" parent="trail/bush" unique_id=837788455 instance=ExtResource("15_80cyg")]
+transform = Transform3D(0.9468897, 0, 2.598876, 0, 2.766, 0, -2.598876, 0, 0.9468897, 1.24707, 0.34259748, 45.169537)
 
 [node name="bush3" parent="trail/bush" unique_id=1936317160 instance=ExtResource("15_80cyg")]
 transform = Transform3D(-1.7267207, 0, -1.0091758, 0, 2, 0, 1.0091758, 0, -1.7267207, 4.280473, 0.4458477, 47.411304)
@@ -1625,6 +1642,9 @@ transform = Transform3D(0.85523766, 0, 0.518236, 0, 1, 0, -0.518236, 0, 0.855237
 [node name="rock_16" parent="trail/rock" unique_id=693833968 instance=ExtResource("45_jsxi6")]
 transform = Transform3D(0.4919526, 0, 0.870622, 0, 1, 0, -0.870622, 0, 0.4919526, 3.8556242, 0.27586275, 38.379543)
 
+[node name="rock_25" parent="trail/rock" unique_id=1305841841 instance=ExtResource("45_jsxi6")]
+transform = Transform3D(0.5416089, 0, 2.9507048, 0, 3, 0, -2.9507048, 0, 0.5416089, -3.7034364, 0.27586275, 45.169907)
+
 [node name="rock_17" parent="trail/rock" unique_id=123805319 instance=ExtResource("45_jsxi6")]
 transform = Transform3D(0.4919526, 0, 0.870622, 0, 1, 0, -0.870622, 0, 0.4919526, -5.5534253, 0.27586275, 36.445637)
 
@@ -1644,13 +1664,16 @@ transform = Transform3D(-0.85994136, 0, 0.5103928, 0, 1, 0, -0.5103928, 0, -0.85
 transform = Transform3D(-0.85994136, 0, 0.5103928, 0, 1, 0, -0.5103928, 0, -0.85994136, -7.093627, 0.27586275, 51.926723)
 
 [node name="rock_21" parent="trail/rock" unique_id=1131425389 instance=ExtResource("45_jsxi6")]
-transform = Transform3D(-0.85994136, 0, 0.5103928, 0, 1, 0, -0.5103928, 0, -0.85994136, -2.2407308, 0.27586275, 47.332653)
+transform = Transform3D(-2.056502, 0, -1.4215484, 0, 2.5, 0, 1.4215484, 0, -2.056502, 2.896673, 0.27586275, 44.805466)
 
 [node name="rock_22" parent="trail/rock" unique_id=1455189338 instance=ExtResource("45_jsxi6")]
 transform = Transform3D(-0.986822, 0, -0.16181055, 0, 1, 0, 0.16181055, 0, -0.986822, 5.514358, 0.27586275, 50.51755)
 
 [node name="wood_log" parent="trail" unique_id=481913582 instance=ExtResource("46_foglu")]
 transform = Transform3D(-1.952971, -0.08345346, 0.42301255, 0.06533271, 1.8822459, 0.67296535, -0.42618746, 0.670959, -1.8352597, -1.2188053, 0.91318613, 32.971153)
+
+[node name="fall_tree" parent="trail" unique_id=137455118 instance=ExtResource("17_80cyg")]
+transform = Transform3D(0.4807655, -2.2357564, 1.0100775, 0.96086216, 1.118656, 2.0187502, -2.2573454, 0, 1.0744262, 1.5551417, 1.1424243, 45.26552)
 
 [node name="spawn_point" type="Node3D" parent="." unique_id=1132621110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2222476, 0.53361, 29.518448)
@@ -1673,9 +1696,94 @@ libraries/ = SubResource("AnimationLibrary_h81eb")
 stream = ExtResource("47_h81eb")
 bus = &"Music"
 
-[node name="shotgun" parent="." unique_id=1876569809 instance=ExtResource("51_v7c81")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.6725713, 1.3484883, 20.718708)
-pickeable = true
+[node name="shovel" parent="." unique_id=24630463 instance=ExtResource("51_v7c81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.473073, 20.394482)
+
+[node name="lights" type="Node3D" parent="." unique_id=146855751]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.83072364, 2.240579, 13.624524)
+
+[node name="light_bulb" parent="lights" unique_id=330395448 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 14.507433, 4.169424, 7.2355824)
+
+[node name="light_bulb2" parent="lights" unique_id=927559786 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 12.719706, 4.169424, -7.400232)
+
+[node name="light_bulb3" parent="lights" unique_id=1021978035 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.5815086, 4.169424, -2.5626054)
+
+[node name="light_bulb4" parent="lights" unique_id=422292605 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.6628089, 4.169424, 6.5088162)
+
+[node name="light_bulb5" parent="lights" unique_id=167996885 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -13.40688, 4.169424, 6.5088162)
+
+[node name="light_bulb6" parent="lights" unique_id=1845027827 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12.202301, 4.169424, -9.840981)
+
+[node name="light_bulb7" parent="lights" unique_id=562395849 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.7074895, -5.8916264, 2.557402)
+
+[node name="light_bulb8" parent="lights" unique_id=364435374 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 12.763712, -5.8916264, 7.479534)
+
+[node name="light_bulb9" parent="lights" unique_id=2106722548 instance=ExtResource("52_p2c42")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 13.071397, -5.8916264, -8.130946)
+
+[node name="light_switches" type="Node3D" parent="." unique_id=1303318223]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.9737139, 2.30437, 13.732649)
+
+[node name="light_switch" parent="light_switches" unique_id=1477890185 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 14.078968, -1.43924, -13.8089)
+on = true
+light_bulb = NodePath("../../lights/light_bulb2")
+
+[node name="light_switch2_kitchen" parent="light_switches" unique_id=1103807935 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(1.4309857e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, 1.4309857e-08, 20.052439, -1.43924, 6.6263514)
+light_bulb = NodePath("../../lights/light_bulb")
+
+[node name="light_switch3_bedroom" parent="light_switches" unique_id=817960494 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.306076, -1.43924, 0.34099674)
+light_bulb = NodePath("../../lights/light_bulb4")
+
+[node name="light_switch6_bedroom2" parent="light_switches" unique_id=421211396 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -14.257644, -1.43924, 0.34099674)
+light_bulb = NodePath("../../lights/light_bulb5")
+
+[node name="light_switch4" parent="light_switches" unique_id=451264525 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -7.7094684, -1.43924, -0.4150536)
+light_bulb = NodePath("../../lights/light_bulb3")
+
+[node name="light_switch5_bathroom" parent="light_switches" unique_id=910233205 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -12.567595, -1.43924, -5.296818)
+light_bulb = NodePath("../../lights/light_bulb6")
+
+[node name="light_switch7" parent="light_switches" unique_id=864244371 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 6.548026, -11.9223995, -5.720662)
+light_bulb = NodePath("../../lights/light_bulb9")
+
+[node name="light_switch9" parent="light_switches" unique_id=1199770096 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -10.041762, -11.9223995, -13.802466)
+on = true
+light_bulb = NodePath("../../lights/light_bulb7")
+
+[node name="light_switch8_powerroom" parent="light_switches" unique_id=1752752889 node_paths=PackedStringArray("light_bulb") instance=ExtResource("53_ip64a")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 6.548026, -11.9223995, 7.3262796)
+light_bulb = NodePath("../../lights/light_bulb8")
+
+[node name="lights_puzzle" parent="." unique_id=2113098511 node_paths=PackedStringArray("light_1", "light_2", "light_3", "light_4", "light_5", "door") instance=ExtResource("54_ip64a")]
+transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 1.3679396, -2.2991014, 14.420237)
+light_1 = NodePath("../light_switches/light_switch2_kitchen")
+light_2 = NodePath("../light_switches/light_switch3_bedroom")
+light_3 = NodePath("../light_switches/light_switch6_bedroom2")
+light_4 = NodePath("../light_switches/light_switch5_bathroom")
+light_5 = NodePath("../light_switches/light_switch8_powerroom")
+door = NodePath("../door_puzzle")
+
+[node name="door_puzzle" parent="." unique_id=902449995 node_paths=PackedStringArray("puzzle") instance=ExtResource("55_svrlv")]
+transform = Transform3D(-3.059797e-08, 0, 0.559, 0, 0.552, 0, -0.7, 0, -2.4434666e-08, 1.5239255, -3.8836179, 11.998777)
+custom_material = ExtResource("56_vpu38")
+locked = true
+puzzle = NodePath("../lights_puzzle")
 
 [connection signal="body_entered" from="triggers/entered_house_trigger" to="triggers/entered_house_trigger" method="entered_house_trigger"]
 [connection signal="body_entered" from="triggers/exited_house_trigger" to="triggers/exited_house_trigger" method="exited_house_trigger"]

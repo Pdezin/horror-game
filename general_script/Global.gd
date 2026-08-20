@@ -46,7 +46,7 @@ func generate_safe_password() -> String:
 	var password = str(rng.randi_range(1000, 9999))
 	print("password:" + password)
 	return password
-
+	
 #SETTINGS
 var camera_sensitivity = 0.2
 var ssil_enabled = false
