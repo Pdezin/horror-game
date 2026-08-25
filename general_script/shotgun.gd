@@ -38,7 +38,10 @@ func _process(_delta):
 		shoot()
 
 func shoot():
-	if pickeable or not visible or not can_shoot or not Global.hasShotgun:
+	if Global.hasShotgun == false:
+		return
+		
+	if pickeable or not visible or not can_shoot:
 		return
 
 	can_shoot = false

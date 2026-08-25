@@ -1,12 +1,13 @@
+AudioStreamPlayer
+AnimationPlayer
+Node3D
+Camera3D
 MeshInstance3D
 OmniLight3D
-AnimationPlayer
 CollisionShape3D
 StaticBody3D
 RayCast3D
-Node3D
 Node
-Camera3D
 RichTextLabel
 TextureRect
 ColorRect

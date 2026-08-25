@@ -17,6 +17,7 @@ func confirm_no():
 
 func confirm_yes():
 	$interact.play()
+	Global.reseat_game()
 	get_tree().change_scene_to_file("res://ui/intro_story.tscn")
 
 func open_settings():

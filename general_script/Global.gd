@@ -18,6 +18,7 @@ const hide_text = 'Press "E" to hide'
 const exit_text = 'Press "E" to exit'
 const dig_text = 'Press "E" to start digging'
 const closet_cant_open = "You can't, the creature is too close"
+const run_jumpscare = "Run!!!"
 
 var powerOn = false
 var hasFlashlight = true

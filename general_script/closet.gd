@@ -4,6 +4,8 @@ extends Node3D
 @onready var enemy = get_tree().current_scene.get_node("enemy")
 @onready var playerCamera: Camera3D = get_tree().current_scene.get_node("player/head/Camera3D")
 
+var hasShotgunBefore = false
+
 func interact_enter(interact_label):
 	if (enemy.is_looking_at_player()):
 		interact_label.text = Global.closet_cant_open
@@ -47,6 +49,8 @@ func enter():
 	playerCamera.make_current()
 	player.show_end_cutscene()
 	enemy.player_hiding = true
+	hasShotgunBefore = Global.hasShotgun
+	Global.hasShotgun = false
 	
 	$enter_closet/enter_closet.disabled = false
 	$exit_closet/exit_closet.disabled = false
@@ -76,6 +80,7 @@ func exit():
 	player.disable_movement = false
 	
 	enemy.player_hiding = false
+	Global.hasShotgun = hasShotgunBefore
 	
 	$enter_closet/enter_closet.disabled = false
 	$exit_closet/exit_closet.disabled = false

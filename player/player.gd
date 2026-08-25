@@ -104,6 +104,9 @@ func isPlayerOnGrass() -> bool:
 	return false
 
 func hide_for_cutscene():
+	var flashlight = get_tree().current_scene.get_node("flashlight")
+	if flashlight != null:
+		flashlight.visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	$player_ui/player_ui.visible = false
@@ -111,8 +114,12 @@ func hide_for_cutscene():
 	$head/Camera3D/shotgun.visible = false
 	
 func show_end_cutscene():
+	var flashlight = get_tree().current_scene.get_node("flashlight")
+	if flashlight != null:
+		flashlight.visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 	visible = true
 	$player_ui/player_ui.visible = true
 	$player_ui/task_ui.visible = true
 	$head/Camera3D/shotgun.visible = Global.hasShotgun
+	
